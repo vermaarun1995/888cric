@@ -1,0 +1,200 @@
+.bl_login_main_container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: Poppins;
+    padding-top: 50px;
+    background: #fff
+}
+
+.bl_login_img_main_container {
+    min-height: 45px;
+    max-height: 350px;
+    width: 100%;
+    position: relative
+}
+
+.bl_login_content_main_container {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: relative;
+    top: -50px;
+    background: #fff;
+    height: -webkit-fill-available
+}
+
+.bl_login_user_main_img_main_container {
+    text-align: center
+}
+
+.bl_login_user_img_container {
+    display: inline-block;
+    position: relative;
+    background: #af0000;
+    top: -45px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    width: 100px;
+    height: 100px
+}
+
+.bl_login_user_img_container img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    left: 50%
+}
+
+.bl_login_content_container {
+    position: relative;
+    top: -45px
+}
+
+.bl_login_title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff
+}
+
+.bl_input_container {
+    margin-bottom: 12px
+}
+
+.bl_login_form_container .bl_input_container label {
+    display: block;
+    font-size: 12px;
+    color: #bfbfbf;
+    margin-bottom: 0
+}
+
+.bl_login_input_container {
+    background: #f4f5f7;
+    padding: 10px;
+    display: flex;
+    border-radius: 10px
+}
+
+.bl_login_input_container input,
+.bl_login_input_container input:focus {
+    border: 0;
+    background: transparent;
+    padding-left: 5px;
+    width: 100%;
+    margin-left: 5px;
+    outline: 0;
+    color: #6a6a6a;
+    font-size: 13px
+}
+
+.bl_login_input_container img {
+    height: 20px
+}
+
+.password_toggle_button {
+    border: 0;
+    box-shadow: none;
+    background: transparent
+}
+
+.password_toggle_button i {
+    color: #696969;
+    font-size: 18px
+}
+
+.bl_input_container .login_btn {
+    width: 100%;
+    display: block;
+    border: 0;
+    background: transparent;
+    margin-top: 20px
+}
+
+.bl_input_container .login_btn a {
+    color: #af0000;
+    text-transform: uppercase;
+    padding: 10px;
+    background-color: #af0000;
+    border-radius: 8px;
+    width: 100%;
+    background: #fc0;
+    font-size: 16px;
+    display: block
+}
+
+.bl_input_container .login_btn.login_otp {
+    margin-top: 0
+}
+
+.bl_forgot_pass_txt p {
+    text-align: center
+}
+
+.bl_forgot_pass_txt p a {
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none
+}
+
+li.bl_prom_option_list {
+    padding: 10px 15px;
+    display: flex;
+    border-bottom: 1px solid #ddd
+}
+
+img.setting-img {
+    width: 30px;
+    object-fit: none;
+}
+
+.bl_login_form_container ul {
+    padding: 0
+}
+
+li.bl_prom_option_list a {
+    color: #000;
+    font-size: 14px;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+h2.heading {
+    padding-top: 280px;
+    text-align: center
+}
+
+.bl_login_form_container h2 {
+    font: 500 20px/32px Roboto,Helvetica Neue,sans-serif;
+    letter-spacing: normal;
+    margin: 0 0 16px;
+}
+
+.ripple {
+    position: relative;
+    overflow: hidden
+}
+
+.ripple:before,
+.ripple:focus:after,
+ripple:focus {
+    border-radius: 50%;
+    background-color: hsla(0, 0%, 100%, .6);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0
+}
+
+.ripple:focus:before {
+    transition: all .5s ease-out;
+    opacity: 0;
+    width: 160px;
+    height: 160px;
+    margin-top: -80px;
+    margin-left: -80px
+}

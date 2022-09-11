@@ -24,6 +24,8 @@ import { StatementsComponent } from './components/statements/statements.componen
 import { LoginComponent } from './components/login/login.component';
 import { BetSlipComponent } from './components/bet-slip/bet-slip.component';
 import { OpenBetsComponent } from './components/open-bets/open-bets.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { AccountInfoComponent } from './components/account-info/account-info.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { OpenBetsComponent } from './components/open-bets/open-bets.component';
     StatementsComponent,
     LoginComponent,
     BetSlipComponent,
-    OpenBetsComponent
+    OpenBetsComponent,
+    SettingsComponent,
+    AccountInfoComponent
   ],
   imports: [
     BrowserModule,
