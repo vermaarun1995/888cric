@@ -1,0 +1,108 @@
+.sport-ctn {
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 5%;
+    padding-top: 1%;
+    height: 100%;
+    display: flex;
+    width: 100%;
+  
+    .MuiTable-root {
+      border: 0px !important;
+      .MuiTableHead-root {
+        border: 0px !important;
+        .MuiTableRow-root {
+          background: var(--table-head) !important;
+          max-height: 40px !important;
+          .MuiTableCell-root {
+            color: var(--table-head-text) !important;
+            border: 0px !important;
+            width: 100%;
+            @media screen and (max-width: 720px) {
+              padding: 0px !important;
+            }
+  
+            .css-1ujnqem-MuiTabs-root {
+              max-height: 35px;
+            }
+            .tabs-style {
+              max-height: 35px;
+              .css-1a4cg4j-MuiButtonBase-root-MuiTab-root {
+                padding: 6px 6px !important;
+                color: var(--white-color);
+              }
+              .css-1a4cg4j-MuiButtonBase-root-MuiTab-root.Mui-selected {
+                color: var(--white-color);
+              }
+              .css-11yukd5-MuiTabs-indicator {
+                background-color: var(--white-color);
+              }
+            }
+            .tab-header {
+              display: flex;
+              flex-direction: row;
+              .tab {
+                margin-right: 10px;
+                padding: 3px;
+                cursor: pointer;
+              }
+              // .active {
+              //   border-bottom: 2px solid #fff;
+              // }
+            }
+            .sport-name {
+              display: flex;
+              flex-direction: row;
+              color: var(--table-head-text) !important;
+              img {
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+  
+      .title-row {
+        padding: 0px !important;
+        max-height: 40px !important;
+        .market {
+          display: flex;
+          font-weight: 500;
+          justify-content: space-around;
+        }
+        .MuiTableCell-root {
+          color: var(--table-head-text) !important;
+          .sport-name {
+            display: flex;
+            flex-direction: row;
+            color: var(--table-head-text) !important;
+            img {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+  
+      .score-detail {
+        width: 120px !important;
+      }
+  
+      .css-apqrd9-MuiTableBody-rooty {
+        .event-detail {
+          display: flex;
+          flex-direction: column;
+        }
+        .css-dsuxgy-MuiTableCell-root {
+          color: var(--text-primary) !important;
+        }
+      }
+    }
+  
+    .right-ctn {
+      margin-top: 0;
+      .content-ctn {
+        margin-top: 0;
+      }
+    }
+  }
+  

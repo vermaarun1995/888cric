@@ -1,0 +1,131 @@
+.bet-list-ctn {
+    padding-left: 1%;
+    padding-right: 5%;
+    .header-ctn {
+      margin-bottom: 20px;
+      .title {
+        color: var(--text-color);
+        font-size: 20px;
+        font-weight: bold;
+        img {
+          margin-right: 10px;
+        }
+      }
+    }
+    .bet-list-ctn .content-bets-ctn .MuiTableContainer-root {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    .content-bets-ctn {
+      .MuiTableContainer-root {
+        max-height: 100%;
+        width: 98vw;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      .css-rorn0c-MuiTableContainer-root {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      .table {
+        .head {
+          .MuiTableRow-root {
+            .MuiTableCell-root {
+              color: var(--text-color);
+              background: var(--table-head) !important;
+              max-height: 40px;
+              min-height: 40px;
+              padding: 4px !important;
+            }
+          }
+        }
+        .MuiTableBody-root {
+          .back-bet {
+            background-color: var(--back-bg) !important;
+            color: var(--text-color) !important;
+          }
+          .lay-bet {
+            background-color: var(--lay-bg) !important;
+            color: var(--text-color) !important;
+          }
+          .MuiTableRow-root {
+            .MuiTableCell-root {
+              color: var(--text-color);
+              font-size: 13px !important;
+              padding: 4px !important;
+            }
+          }
+        }
+      }
+  
+      .match-details {
+        display: block;
+        .desc {
+          display: grid;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 720px) {
+    .bet-list-ctn {
+  
+      // position: absolute;
+      // top: 114px;
+      height: 100%;
+      width: 100%;
+      .header-ctn {
+        margin-bottom: 20px;
+        .title {
+          color: var(--text-color);
+          font-size: 16px;
+          font-weight: 600;
+          font-family: var(--font-family);
+          img {
+            margin-right: 10px;
+            margin-left: 10px;
+          }
+        }
+      }
+  
+      .content-bets-ctn {
+        .MuiTableContainer-root {
+          max-height: 100%;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+        }
+        .table {
+          .head {
+            .MuiTableRow-root {
+              .MuiTableCell-root {
+                color: var(--text-color);
+                background: var(--table-head) !important;
+                padding: 2px !important;
+                font-size: 11px !important;
+                text-align: center;
+                border: 1px solid #ddd;
+              }
+            }
+          }
+          .MuiTableBody-root {
+            .MuiTableRow-root {
+              .MuiTableCell-root {
+                color: var(--text-color);
+                padding: 4px !important;
+                font-size: 10px !important;
+                border: 1px solid #ddd;
+                text-align: center;
+              }
+            }
+          }
+        }
+  
+        .match-details {
+          display: block;
+          .desc {
+            display: grid;
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,121 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300&display=swap");
+html {
+  height: 100%;
+  position: static;
+}
+
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: var(--font-family);
+  font-size: 14px;
+  background-color: var(--body-bg) !important;
+  /* position: absolute; */
+
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+}
+
+/* Global styles */
+
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.profit {
+  color: var(--text-success);
+}
+
+.loss {
+  color: var(--text-danger);
+}
+
+.hide {
+  display: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@media screen and (max-width: 920px) {
+  .web-view {
+    display: none !important;
+  }
+}
+
+@media (min-width: 920px) {
+  .mob-view {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .tab-view {
+    display: none !important;
+  }
+
+  .odds-web-view {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .lap-view {
+    display: none !important;
+  }
+
+  .odds-mob-view {
+    display: none;
+  }
+}
+
+.navlink {
+  text-decoration: none;
+  color: var(--text-color) !important;
+}
+.scorecard-section {
+  color: var(--text-color) !important;
+}
+.css-13xfq8m-MuiTabPanel-root {
+  padding: 0px !important;
+}
+.svg {
+  fill: red !important;
+}
+
+@media screen and (max-width: 840px) {
+  .css-19kzrtu,
+  .css-u7qq7e,
+  .css-15v22id-MuiAccordionDetails-root {
+    padding: 0px !important;
+  }
+}
+.css-pdct74-MuiTablePagination-selectLabel,
+.css-jtlhu6-MuiTablePagination-root,
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  color: var(--text-color) !important;
+}
+.css-u7qq7e,
+.css-dv0mq-MuiTableCell-root {
+  padding: 0px;
+}
+.close-icon {
+  cursor: pointer;
+}
+.mt-100 {
+  top: 64px;
+  position: relative;
+  width: 100%;
+}
+.mt-50 {
+  top: 65px;
+  position: relative;
+  width: 100%;
+}

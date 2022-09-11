@@ -1,0 +1,157 @@
+.statements h2 {
+    font: 500 20px/32px Roboto,Helvetica Neue,sans-serif;
+    letter-spacing: normal;
+    margin: 0 0 16px;
+}
+.tab_container {
+    width: 100%;
+    position: relative
+}
+
+section#content3 h5 {
+    font-size: 20px;
+    text-align: center;
+    color: #bbb;
+    padding: 20% 0
+}
+
+input,
+section {
+    clear: both;
+    padding-top: 10px;
+    display: none
+}
+
+label {
+    font-weight: 500;
+    font-size: 15px;
+    display: block;
+    float: left;
+    width: 25%;
+    padding: 1.5em;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    background: #a91414
+}
+
+#tab1:checked~#content1,
+#tab2:checked~#content2,
+#tab3:checked~#content3,
+#tab4:checked~#content4,
+#tab5:checked~#content5 {
+    display: block;
+    padding: 20px;
+    background: #fff;
+    color: #999;
+    border-bottom: 2px solid #f0f0f0
+}
+
+.tab_container .tab-content h3,
+.tab_container .tab-content p {
+    -webkit-animation: fadeInScale .7s ease-in-out;
+    animation: fadeInScale .7s ease-in-out
+}
+
+.tab_container .tab-content h3 {
+    text-align: center
+}
+
+.tab_container [id^=tab]:checked+label {
+    color: #fc0
+}
+
+.tab_container [id^=tab]:checked+label .fa {
+    color: #0ce
+}
+
+label .fa {
+    font-size: 1.3em;
+    margin: 0 .4em 0 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd
+}
+
+td,
+th {
+    text-align: left;
+    padding: 15px 8px;
+    font-size: 14px;
+}
+
+tr:nth-child(2n) {
+    background-color: #f2f2f2
+}
+
+.col-9.col-md-9 {
+    padding: 0;
+    border-bottom: 1px solid #ddd
+}
+
+h3.bottom-line {
+    text-align: left !important;
+    border-bottom: 1px solid #ddd
+}
+
+section.tab-content {
+    background: #f7f7f7;
+    box-shadow: 0 0 4px 0 #ccc;
+    padding: 20px;
+    border: 1px solid #e2e2e2;
+    margin: 10px 21px;
+    width: 95%
+}
+
+.statements {
+    overflow-x: auto;
+    padding: 180px 2% 0
+}
+
+@media only screen and (max-width:900px) {
+    label span {
+        display: none
+    }
+
+    .tab_container {
+        width: 98%
+    }
+}
+
+@-webkit-keyframes fadeInScale {
+    0% {
+        transform: scale(.9);
+        opacity: 0
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        transform: scale(.9);
+        opacity: 0
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+.no_wrap {
+    color: #0ce
+}
+
+.link,
+.no_wrap {
+    text-align: center
+}

@@ -1,0 +1,145 @@
+<div class="bl_withdraw_main_contianer">
+    <h1 id="sd" class="bl_login_title">WithDraw Details</h1>
+    <ul ngbNav #nav="ngbNav" (navChange)="navChange($event)" (activeIdChange)="activeIdChange($event)"
+        [(activeId)]="active" class="nav nav-tabs">
+        <li [ngbNavItem]="1">
+            <a ngbNavLink class="nav-link">Bank Details</a>
+            <ng-template ngbNavContent>
+                <div>
+                    <div class="withdraw">
+                        <div class="bl_register_input_container">
+                            <input type="text" placeholder="Bank Account Holder Name" class="">
+                        </div>
+                        <div class="bl_register_input_container">
+                            <input type="text" placeholder="Bank Account Number" class="">
+                        </div>
+                        <div class="bl_register_input_container">
+                            <input type="text" placeholder="Bank Name" class="">
+                        </div>
+                        <div class="bl_register_input_container">
+                            <input type="text" placeholder="Branch Name" class="">
+                        </div>
+                        <div class="bl_register_input_container">
+                            <input type="text" placeholder="Amount" class="">
+                        </div>
+                        <div class="bl_register_input_container">
+                            <input type="text" placeholder="IFSC Code" class="ifsc ">
+                        </div>
+                        <div class="bl_register_input_container">
+                            <button class="register_btn login_otp"><a
+                                    class="register_submit_btn ripple"><span>Submit</span></a></button>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </li>
+        <li [ngbNavItem]="2">
+            <a ngbNavLink class="nav-link">Withdrawal Status</a>
+            <ng-template ngbNavContent>
+                <div class="with_detail_ind_container">
+                    <div class="with_amount_container">
+                        <p><span>₹</span>3000</p>
+                    </div>
+                    <div class="with_details_sub_container">
+                        <div class="row">
+                            <div class="with_first_line_container col-sm-12">
+                                <div class="with_status_container col-xs-4">
+                                    <p class="status_title_text">Status</p>
+                                    <p class="status_text pending_text">Rejected</p>
+                                </div>
+                                <div class="with_reverse_container col-xs-4"></div>
+                                <div class="with_date_container col-xs-4">
+                                    <p class="date_title_text">Date &amp; Time</p>
+                                    <p class="date_text"><span class="date_span_with"> Aug 27, 2022 </span><span
+                                            class="time_span_with">12:46 PM</span></p>
+                                </div>
+                            </div>
+                            <div class="with_second_line_container col-sm-12">
+                                <div class="with_status_container col-xs-4">
+                                    <p class="comments_title_text"> Description </p>
+                                    <p class="comments_text">Withdrawal Limit Exceeded</p>
+                                </div>
+                                <div class="with_reverse_container col-xs-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="author_bio_wrap">
+                        <div class="with_first_col_container">
+                            <div class="with_account_container">
+                                <p class="status_title_text">Account Holder Name</p>
+                                <p class="account_name_with">Arun Verma </p>
+                            </div>
+                            <div class="with_status_container">
+                                <p class="status_title_text">Account Number</p>
+                                <p class="account_name_with">61150008683</p>
+                            </div>
+                        </div>
+                        <div class="with_second_col_container">
+                            <div class="with_bank_container">
+                                <p class="date_title_text">IFSC Code</p>
+                                <p class="date_text"><span class="date_span_with">SBIN0031078</span></p>
+                            </div>
+                            <div class="with_bank_detail_container">
+                                <p class="date_title_text">Bank Name</p>
+                                <p class="date_text"><span class="date_span_with">SBI Bank </span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="with_detail_ind_container">
+                    <div class="with_amount_container">
+                        <p><span>₹</span>3000</p>
+                    </div>
+                    <div class="with_details_sub_container">
+                        <div class="row">
+                            <div class="with_first_line_container col-sm-12">
+                                <div class="with_status_container col-xs-4">
+                                    <p class="status_title_text">Status</p>
+                                    <p class="status_text pending_text">Rejected</p>
+                                </div>
+                                <div class="with_reverse_container col-xs-4"></div>
+                                <div class="with_date_container col-xs-4">
+                                    <p class="date_title_text">Date &amp; Time</p>
+                                    <p class="date_text"><span class="date_span_with"> Aug 27, 2022 </span><span
+                                            class="time_span_with">12:46 PM</span></p>
+                                </div>
+                            </div>
+                            <div class="with_second_line_container col-sm-12">
+                                <div class="with_status_container col-xs-4">
+                                    <p class="comments_title_text"> Description </p>
+                                    <p class="comments_text">Withdrawal Limit Exceeded</p>
+                                </div>
+                                <div class="with_reverse_container col-xs-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="author_bio_wrap">
+                        <div class="with_first_col_container">
+                            <div class="with_account_container">
+                                <p class="status_title_text">Account Holder Name</p>
+                                <p class="account_name_with">Arun Verma </p>
+                            </div>
+                            <div class="with_status_container">
+                                <p class="status_title_text">Account Number</p>
+                                <p class="account_name_with">61150008683</p>
+                            </div>
+                        </div>
+                        <div class="with_second_col_container">
+                            <div class="with_bank_container">
+                                <p class="date_title_text">IFSC Code</p>
+                                <p class="date_text"><span class="date_span_with">SBIN0031078</span></p>
+                            </div>
+                            <div class="with_bank_detail_container">
+                                <p class="date_title_text">Bank Name</p>
+                                <p class="date_text"><span class="date_span_with">SBI Bank </span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div [ngbNavOutlet]="nav"></div>
+    </div>
+</div>

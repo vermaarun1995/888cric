@@ -1,0 +1,38 @@
+<header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorTransparent MuiAppBar-positionFixed main-header mui-fixed css-wl4deo">
+    <div class="MuiToolbar-root css-6tsndk">
+        <div class="providers-ctn web-view">
+            <a class="navlink" href="">
+                <button class="MuiButton-text  css-1ujsas3"
+                    tabindex="0" type="button"><img src="../assets/img/Dream.1f8caf26.svg" alt="Dream" class="active-provider provider-img">
+                    <span class="MuiTouchRipple-root css-w0pj6f"></span>
+                </button>
+            </a>
+            <a class="navlink" href="">
+                <button class="MuiButton-text  css-1ujsas3" tabindex="0" type="button">
+                    <img src="../assets/img/Betfair.84eee419.svg" alt="BetFair"class="provider-img">
+                    <span class="MuiTouchRipple-root css-w0pj6f"></span>
+                </button>
+            </a>
+        </div>
+        <div class="balance-ctn">
+            <button class="MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall bal-btn css-1lpukdo" tabindex="0" type="button">
+                <div class="web-view">Balance :12842.4 <span class="MuiTouchRipple-root css-w0pj6f"></span></div>
+            </button>
+            <button class="MuiButton-text MuiButton-sizeSmall MuiButton-textSizeSmall refrsh-btn web-view css-1rtnrqa" tabindex="0" type="button">
+                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
+                    focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="AutorenewIcon" fill="#ffc726">
+                    <path
+                        d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z">
+                    </path>
+                </svg>
+            </button>
+            <button [routerLink]="['/my-bets']" class="MuiButton-text MuiButton-sizeSmall MuiButton-textSizeSmall bets-btn css-1rtnrqa" tabindex="0" type="button">
+                My Bets<span class="MuiTouchRipple-root css-w0pj6f"></span>
+            </button>
+            <label id="switch" class="switch">
+                <input type="checkbox" name="darkTheme" class="slider" id="switchCheckBox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+</header>

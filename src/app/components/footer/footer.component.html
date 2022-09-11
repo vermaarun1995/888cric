@@ -1,0 +1,57 @@
+<div class="bl_footer_main_container">
+    <div class="bl_footer_container">
+        <ul class="bl_footer_list_container">
+            <li class="bl_footer_list_item">
+                <img src="../assets/img/footer-home.png" alt="Home">
+            </li>
+            <li class="bl_footer_list_item ml-40">
+                <img src="../assets/img/footer-promotion.png" alt="Promotion">
+            </li>
+            <li class="bl_footer_list_item mr-40">
+                <img src="../assets/img/call-i.png" alt="Help">
+            </li>
+            <li class="bl_footer_list_item">
+                <button type="button" class="btn ripple active">Deposit</button>
+            </li>
+        </ul>
+        <a href="javascript:;" id="toggle" class="" [ngClass]="openMenu ? 'on' : ''" (click)="openMenu = !openMenu"><span></span></a>
+        <div id="menu">
+            <div class="navbar-nav">
+                <a [routerLink]="['/deposit']" class="nav-item nav-link" (click)="openMenu = false">
+                    <img src="../assets/img/deposit.png">Deposit
+                </a>
+                <a [routerLink]="['/withdraw']" class="nav-item nav-link" (click)="openMenu = false">
+                    <img src="../assets/img/withdraw.png">Withdraw
+                </a>
+                <a [routerLink]="['/statements']" class="nav-item nav-link" (click)="openMenu = false">
+                    <img src="../assets/img/statement.png">Game Statement
+                </a>
+                <a href="/settings" class="nav-item nav-link" (click)="openMenu = false">
+                    <img src="../assets/img/profile.png">Profile Setting
+                </a>
+            </div>
+            <div class="bl_quicklinks_container">
+                <div class="bl_quicklinks_inner_container">
+                    <div class="bl_ind_quick_links">
+                        <a>
+                            <img src="../assets/img/quick_prom.png" alt="">
+                            <p class="bl_quick_healine">Promotions</p>
+                        </a>
+                    </div>
+                    <div class="bl_ind_quick_links">
+                        <a>
+                            <img src="../assets/img/quick_sports.png" alt="">
+                            <p class="bl_quick_healine">Sports</p>
+                        </a>
+                    </div>
+                    <div class="bl_ind_quick_links">
+                        <a>
+                            <img src="../assets/img/call-g.png" alt="">
+                            <p class="bl_quick_healine">Call</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+:root {
+  --white-color: #fff;
+  --text-common-dark: #000;
+  --text-danger: #ff0000;
+  --font-famliy: "Roboto", "Helvetica", "Arial", sans-serif;
+  --back-bg: #72bbef;
+  --lay-bg: #faa9ba;
+  --odds-color: #000;
+  --text-success: #18dc6d;
+  --odd-btn-animation-color: #ffc726;
+  --table-head-bg: #243a48;
+  --border-color: #243a48;
+  --market-table-row: #fffeee;
+  --premium-odd-background: #72e3a0;
+  --text-color: #000;
+  --runner-color: #2789ce;
+  --table-head-v2: #ffb80c;
+  --drawer-background-contrast: #ffffff;
+  --scorecard-bg: #1e1e1e;
+  --primary: #ffc726;
+  --grid-bg: #f0ece1;
+  --active-runner: #ffc726;
+  --table-bg-v2: #fff;
+  --body-bg-premium: #f0ece1;
+}
+
+.ios body,
+.theme-light {
+  --primary: #ffc726;
+  --primary-rgb: 255, 199, 38;
+  --background: #fff;
+  --sub-header-color: #1e1e1e;
+  --table-bg: #f0ece1;
+  --text-color: #000;
+  --gradient: var(--primary);
+  --header-color: var(--primary);
+  --border-color: var(--text-color);
+  --grid-bg: #f0ece1;
+  --grid-inner-box: var(--sub-header-color);
+  --table-head: var(--gradient);
+  --body-bg: var(--background);
+  --sport-header: var(--primary);
+  --active-tab: var(--sub-header-color);
+  --accordion-bg: var(--background);
+  --loader-bg: var(--primary);
+  --text-primary: var(--primary);
+  --text-secondary: var(--text-color);
+  --table-head-text: var(--text-color);
+  --betslip-content: var(--table-bg);
+  --button-bg: var(--table-bg);
+  --active-runner: var(--primary);
+  --input-bg: var(--table-bg);
+  --scorecard-bg: #1e1e1e;
+}
+.theme-dark {
+  --odds-color: #fff;
+  --primary: #18dc6d;
+  --background: #232a33;
+  --sub-header-color: #1a212a;
+  --table-bg: #1a212a;
+  --text-color: #fff;
+  --gradient: linear-gradient(180deg, var(--primary) 60%, var(--primary) 40%);
+  --header-color: var(--primary);
+  --border-color: var(--text-color);
+  --grid-bg: var(--table-bg);
+  --grid-inner-box: var(--sub-header-color);
+  --table-head: var(--gradient);
+  --body-bg: var(--background);
+  --sport-header: var(--primary);
+  --active-tab: var(--sub-header-color);
+  --accordion-bg: var(--background);
+  --loader-bg: var(--primary);
+  --text-primary: var(--primary);
+  --text-secondary: var(--text-color);
+  --table-head-text: var(--text-color);
+  --betslip-content: var(--table-bg);
+  --button-bg: var(--table-bg);
+  --odd-btn-animation-color: var(--primary);
+  --active-runner: var(--primary);
+  --input-bg: var(--table-bg);
+
+  --scorecard-bg: var(--table-bg);
+}

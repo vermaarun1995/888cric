@@ -1,0 +1,225 @@
+.main-header {
+    max-height: 70px;
+    position: fixed !important;
+    z-index: 9999;
+    top: 0;
+    .MuiToolbar-root {
+      background: var(--header-color);
+    }
+  
+    .MuiToolbar-root {
+      justify-content: space-between;
+  
+      .providers-ctn {
+        .navlink {
+          cursor: pointer;
+          text-decoration: none;
+        }
+  
+        .svg-color,
+        svg {
+          fill: red !important;
+        }
+        .provider-img {
+          fill: red !important;
+          height: 48px;
+          width: 100px;
+          border-radius: 5px;
+          border: 1px solid var(--border-color);
+          border-radius: 5px;
+          padding: 3px 9px;
+          border-radius: 25px;
+          cursor: pointer;
+          object-fit: contain;
+        }
+  
+        .active-provider {
+          border: 2px solid #fff;
+          border-radius: 25px;
+          padding: 3px 9px;
+        }
+      }
+  
+      .side-section {
+        .menu {
+          color: var(--text-color);
+        }
+        .cross {
+          color: rgb(199, 81, 81);
+        }
+  
+        @media (max-width: 600px) {
+          .MuiDrawer-root {
+            display: none;
+          }
+        }
+      }
+  
+      .balance-ctn {
+        display: flex;
+        flex-direction: row;
+        .bal-btn {
+          background-color: var(--primary);
+          color: var(--text-color);
+        }
+        .refrsh-btn {
+          background-color: var(--text-color);
+          margin-left: 4px;
+          min-width: 20px;
+          color: var(--primary);
+        }
+        .bets-btn {
+          background-color: var(--primary);
+          margin-left: 4px;
+          color: var(--text-color);
+  
+          @media (max-width: 600px) {
+            background-color: var(--primary);
+            margin-left: 2px;
+            color: var(--text-color);
+            font-size: 11px;
+          }
+        }
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 45px;
+          height: 25px;
+          margin-top: 5px;
+          margin-left: 5px;
+        }
+  
+        /* Hide default HTML checkbox */
+        .switch input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+  
+        /* The slider */
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          -webkit-transition: 0.4s;
+          transition: 0.4s;
+        }
+  
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 30px;
+          width: 30px;
+          left: 0px;
+          bottom: 4px;
+          top: 0;
+          bottom: 0;
+          margin: auto 0;
+          -webkit-transition: 0.4s;
+          transition: 0.4s;
+          box-shadow: 0 0px 15px #2020203d;
+          background: white url("https://i.ibb.co/FxzBYR9/night.png");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+  
+        input:checked + .slider {
+          background-color: #ddd;
+        }
+  
+        input:focus + .slider {
+          box-shadow: 0 0 1px var(--primary);
+        }
+  
+        input:checked + .slider:before {
+          -webkit-transform: translateX(24px);
+          -ms-transform: translateX(24px);
+          transform: translateX(24px);
+          background: white url("https://i.ibb.co/7JfqXxB/sunny.png");
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+  
+        /* Rounded sliders */
+        .slider.round {
+          border-radius: 34px;
+        }
+  
+        .slider.round:before {
+          border-radius: 50%;
+        }
+      }
+    }
+  
+    .arrow-icon {
+      width: 24px;
+      height: 24px;
+      transform: rotate(180deg);
+    }
+  
+    .back-btn {
+      color: #000;
+    }
+  }
+  
+  .MuiDrawer-root {
+    .MuiDrawer-paper {
+      background-color: var(--sub-header-color);
+      position: absolute;
+      width: 60%;
+      max-width: 210px;
+      margin-top: 100px;
+  
+      .nav-link {
+        text-decoration: none;
+        color: var(--primary) !important;
+        border-bottom: 1px solid rgba(var(--ion-text-color-contrast-rgb), 0.3);
+      }
+      .active {
+        .MuiListItem-button {
+          border: 1px solid var(--primary) !important;
+          background-color: var(--primary) !important;
+          color: var(--sub-header-color) !important;
+          font-weight: bold !important;
+        }
+      }
+  
+      .MuiListItem-button {
+        color: var(--primary) !important;
+        font-weight: bold;
+        width: 100%;
+        text-decoration: none;
+        font-family: Nunito;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 15px;
+        letter-spacing: 0.01em;
+        text-align: left;
+      }
+      .MuiListItem-button:hover {
+        background-color: var(--primary);
+        color: var(--text-color);
+        font-family: Nunito;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 15px;
+        letter-spacing: 0.01em;
+        text-align: left;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 720px) {
+    .main-header {
+      .MuiToolbar-root {
+        padding-left: 0px;
+      }
+    }
+  }
+  
