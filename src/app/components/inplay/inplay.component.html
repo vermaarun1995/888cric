@@ -1,0 +1,55 @@
+<div class="mt-100">
+    <div class="left-ctn">
+        <div class="live-events-page">
+            <div class="MuiPaper-root MuiPaper-elevation custom-accordion css-67l5gl">
+                <ngb-accordion #acc="ngbAccordion" activeIds="toggle-0"
+                    class="MuiPaper-root right-side-accordion css-67l5gl" *ngIf="inplayData">
+                    <ngb-panel id="toggle-{{i}}" *ngFor="let inplayList of inplayData; let i = index;">
+                        <ng-template ngbPanelHeader>
+                            <button class="MuiButtonBase-root css-1iji0d4 w-100 accordion-button rounded-0"
+                                ngbPanelToggle>
+                                <div class="css-17o5nyn">
+                                    <div class="MuiTypography-root title css-90jo3o">
+                                        <div *ngIf="inplayList.sportName == 'Cricket'"><img src="../assets/img/cricket.35c4e42b.svg" alt="cricket"></div>
+                                        <div *ngIf="inplayList.sportName == 'Soccer'"><img src="../assets/img/soccer.d9fa837e.svg" alt="soccer"></div>
+                                        <div *ngIf="inplayList.sportName == 'Tennis'"><img src="../assets/img/tennis.979b84c7.svg" alt="tennis"></div>
+                                        <div>{{inplayList.sportName}}</div>
+                                    </div>
+                                </div>
+                            </button>
+                        </ng-template>
+                        <ng-template ngbPanelContent *ngIf="inplayList.oddsData.length > 0">
+                            <div class="MuiAccordionDetails-root css-u7qq7e">
+                                <div class="events-table-ctn">
+                                    <div class="MuiTableContainer-root css-kge0eu">
+                                        <table class="MuiTable-root sport-events-tbl css-1owb465">
+                                            <app-table-row [tableRowList]="inplayList.oddsData" [multiMarketPin]="false"
+                                                class="d-table w-100"></app-table-row>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template ngbPanelContent *ngIf="inplayList.oddsData.length === 0">
+                            <div class="MuiAccordionDetails-root css-u7qq7e">
+                                <div class="events-table-ctn">
+                                    <div class="MuiTableContainer-root css-kge0eu">
+                                        <table class="MuiTable-root sport-events-tbl css-1owb465">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center" colspan="5">There are no events to be
+                                                        displayed.
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ngb-panel>
+                </ngb-accordion>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,26 +2,32 @@
     <div class="body-ctn">
         <div class="bet-body">
             <div class="header-row">
-                <div class="event">Central Punjab v Southern Punjab</div>
-                <img class="close-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFESURBVHgBlVOxdQIxDP1yA2U6KG+DZISwAKGiZIWwAO/sDWAFJuCxQLJBboNAB13ooDlHss9EzpG8Q+/pzpb1v79smfDLvLXPIJqwv/C0iEFf8bxCXTuydqfzSQEf+FfCmDn+s7pe8leIvq4EAUz0xv6ELiaKvB8JiWlCZWdw2DbklmHIuxcs+/O6OB4DgwGwXgOXS4z1esB0CpxOwHaryxkZZrMZ+3AYfTaLQHEZF0WM50om5J37yOT3+xEgKg6HH9LjMao6nzXFzrRqlwRJFEBScxssVhjcMu+j/zVXJgT7LJJqTjsnJelM8o0qw59NFtRgka3LkZvQxt3ZJpCr0zXrMyHKCaS1gxLnlrz4invM+xWV5dw0Exvaszu4ChjEQ0R4GNzbwtoBvErvIGBb69La0p2xPx6b8D6clTEbWizedf43/JGbh7O84BEAAAAASUVORK5CYII=" alt="close">
+                <div class="event">{{setBetData?.eventName}}</div>
+                <img class="close-icon" 
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFESURBVHgBlVOxdQIxDP1yA2U6KG+DZISwAKGiZIWwAO/sDWAFJuCxQLJBboNAB13ooDlHss9EzpG8Q+/pzpb1v79smfDLvLXPIJqwv/C0iEFf8bxCXTuydqfzSQEf+FfCmDn+s7pe8leIvq4EAUz0xv6ELiaKvB8JiWlCZWdw2DbklmHIuxcs+/O6OB4DgwGwXgOXS4z1esB0CpxOwHaryxkZZrMZ+3AYfTaLQHEZF0WM50om5J37yOT3+xEgKg6HH9LjMao6nzXFzrRqlwRJFEBScxssVhjcMu+j/zVXJgT7LJJqTjsnJelM8o0qw59NFtRgka3LkZvQxt3ZJpCr0zXrMyHKCaS1gxLnlrz4invM+xWV5dw0Exvaszu4ChjEQ0R4GNzbwtoBvErvIGBb69La0p2xPx6b8D6clTEbWizedf43/JGbh7O84BEAAAAASUVORK5CYII=" 
+                alt="close"
+                (click)="closeWindow()">
             </div>
-            <div class="back-bg bet-card">
-                <div class="market">Match Odds @ Central Punjab </div>
+            <div class="{{setBetData?.betType != null ? setBetData?.betType : 'back'}}-bg bet-card">
+                <div class="market">Match Odds @ {{placeBetData.batName}} </div>
                 <div class="input-row">
                     <div class="input-row-ctn odds-ctn">
                         <div class="row-header">Odds</div>
                         <div class="row-input-odds">
-                            <button class="MuiButton-root MuiButtonBase-root odds-btns css-1ujsas3" type="button">
+                            <button class="MuiButton-root MuiButtonBase-root odds-btns css-1ujsas3" type="button" (click)="changeBetPrice('minus')">
                                 <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-6xugel">
-                                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="RemoveIcon">
+                                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false"
+                                        viewBox="0 0 24 24" aria-hidden="true" data-testid="RemoveIcon">
                                         <path d="M19 13H5v-2h14v2z"></path>
                                     </svg>
                                 </span>
                             </button>
-                            <input class="row-input" type="text" value="80.00" inputmode="numeric" style="height: 30px; border: 0px; padding: 2px;">
-                            <button class="MuiButton-root MuiButtonBase-root odds-btns mr-1 css-1ujsas3" type="button">
+                            <input class="row-input" type="number" [(ngModel)]="placeBetData.betPrice"
+                                style="height: 30px; border: 0px; padding: 2px;">
+                            <button class="MuiButton-root MuiButtonBase-root odds-btns mr-1 css-1ujsas3" type="button" (click)="changeBetPrice('plus')">
                                 <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-6xugel">
-                                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false" viewBox="0 0 24 24" aria-hidden="true" data-testid="AddIcon">
+                                    <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false"
+                                        viewBox="0 0 24 24" aria-hidden="true" data-testid="AddIcon">
                                         <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
                                     </svg>
                                 </span>
@@ -29,30 +35,30 @@
                         </div>
                     </div>
                     <div class="input-row-ctn">
-                        <div class="row-header">Stake</div>
-                        <input class="row-input" type="text" value="" inputmode="numeric" style="height: 30px; border: 0px; padding: 2px;">
+                        <div class="row-header">{{setBetData?.betType == 'back' ? 'Stake' : 'Profit'}}</div>
+                        <input class="row-input" type="number" [(ngModel)]="bidStackPrice" inputmode="numeric" style="height: 30px; border: 0px; padding: 2px;">
                     </div>
                 </div>
                 <div class="clear-row">
                     <span class="text b-text">Clear</span>
                 </div>
-                <div class="quick-bet">
-                    <button class="MuiButton-root MuiButtonBase-root qb-btn css-1ujsas3" type="button">+100</button>
-                    <button class="MuiButton-root MuiButtonBase-root qb-btn css-1ujsas3" type="button">+500</button>
-                    <button class="MuiButton-root MuiButtonBase-root qb-btn css-1ujsas3" type="button">+1,000</button>
-                    <button class="MuiButton-root MuiButtonBase-root qb-btn css-1ujsas3" type="button">+5,000</button>
-                    <button class="MuiButton-root MuiButtonBase-root qb-btn css-1ujsas3" type="button">+10,000</button>
-                    <button class="MuiButton-root MuiButtonBase-root qb-btn css-1ujsas3" type="button">+50,000</button>
+                <div class="quick-bet" *ngIf="stackLimitList">
+                    <ng-container *ngFor="let stackLimit of stackLimitList">
+                        <button class="MuiButton-root MuiButtonBase-root qb-btn css-1ujsas3" type="button" (click)="setBidPriceData(stackLimit.stakeLimitPrice)">+{{stackLimit.stakeLimitPrice}}</button>
+                    </ng-container>
                 </div>
             </div>
         </div>
         <div class="bet-footer">
             <div class="stake-section">
-                <div class="stake-label">Profit</div>
-                <div class="stake-value">INR. <span class="profit">0.00</span>
+                <div class="stake-label">{{setBetData?.betType == 'back' ? 'Profit' : 'Liability'}}</div>
+                <div class="stake-value">INR. <span class="{{setBetData?.betType == 'back' ? 'profit' : 'loss'}}"> {{profitLossPrice |  number : '1.2-2'}}</span>
                 </div>
             </div>
-            <div class="place-section"><button class="place-btn"><div class="label">Place Bet</div></button></div>
+            <div class="place-section"><button class="place-btn" [ngClass]="{'disable' : !isUserLogin || !inPlay }"
+                [disabled]="!isUserLogin || !inPlay" style="cursor:pointer;">
+                    <div class="label">Place Bet</div>
+                </button></div>
         </div>
     </div>
 </div>

@@ -1214,7 +1214,6 @@ img{
 .betslip-ctn {
     background: var(--grid-bg);
     position: relative;
-    height: 320px;
     padding: 8px
 }
 
@@ -1242,10 +1241,6 @@ img{
 .betslip-ctn .betslip-progress .centered .icon {
     color: #ff8282;
     z-index: 1
-}
-
-.betslip-ctn .body-ctn {
-    max-height: 300px
 }
 
 .betslip-ctn .body-ctn .bet-body {
@@ -1402,6 +1397,7 @@ img{
     background: var(--input-bg);
     color: var(--text-color);
     font-weight: 700;
+    font-size: 14px;
     border-radius: 0 !important;
     border: 0 !important;
     border: 1px solid var(--text-color) !important
@@ -1436,7 +1432,8 @@ img{
     margin-top: 3px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap:3px;
     flex: 1 1;
     flex-wrap: wrap
 }

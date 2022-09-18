@@ -1,0 +1,68 @@
+<thead class="MuiTableHead-root css-1wbz3t9">
+    <tr class="MuiTableRow-root css-1gqug66">
+        <th class="MuiTableCell-root MuiTableCell-head css-13njpue" colspan="3">
+            <div class="sport-name">
+                <img src="../assets/img/cricket.35c4e42b.svg" alt="cricket" *ngIf="sportIcon == true && sportId == 4">
+                <img src="../assets/img/soccer.d9fa837e.svg" alt="soccer" *ngIf="sportIcon == true && sportId == 1">
+                <img src="../assets/img/tennis.979b84c7.svg" alt="tennis" *ngIf="sportIcon == true && sportId == 2">
+                Events
+            </div>
+        </th>
+        <th class="MuiTableCell-root css-4v91pa">1</th>
+        <th class="MuiTableCell-root css-4v91pa">x</th>
+        <th class="MuiTableCell-root css-4v91pa">2</th>
+    </tr>
+</thead>
+<tbody class="MuiTableBody-root css-1xnox0e">
+    <tr class="MuiTableRow-root css-1gqug66" *ngFor="let tableColumn of tableRowList" [routerLink]="['/fullmarket', tableColumn.marketId, tableColumn.gameId, tableColumn.eid]">
+        <th class="MuiTableCell-root css-1o6fzn1" colspan="2">
+            <a class="navlink" href="javascript:;">
+                <div class="event-name">{{tableColumn.eventName.split("/")[0]}}</div>
+                <div class="date">{{ tableColumn.eventDate | date : 'medium' }} </div>
+            </a>
+        </th>
+        <td class="MuiTableCell-root css-1o6fzn1">
+            <img src="../assets/img/inplay.540d59a5.svg" alt="live" *ngIf="tableColumn.inPlay=='True'">
+        </td>
+        <td class="MuiTableCell-root MuiTableCell-alignRight css-1thfh4x">
+            <div class="exch-odd-view">
+                <div class="button-content back">
+                    <div class="price">{{tableColumn.back11}}</div>
+                    <div class="size">99.00</div>
+                </div>
+                <div class="button-content lay">
+                    <div class="price">{{tableColumn.lay11}}</div>
+                    <div class="size">40.00</div>
+                </div>
+            </div>
+        </td>
+        <td class="MuiTableCell-root MuiTableCell-alignRight css-1thfh4x">
+            <div class="exch-odd-view">
+                <div class="button-content back">
+                    <div class="price">
+                        <!-- {{tableColumn.back1}} -->
+                        <img src="../assets/img/Lock.a1925fe3.svg" class="lock-img" alt="lock-img">
+                    </div>
+                </div>
+                <div class="button-content lay">
+                    <div class="price">
+                        <!-- {{tableColumn.lay1}} -->
+                        <img src="../assets/img/Lock.a1925fe3.svg" class="lock-img" alt="lock-img">
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td class="MuiTableCell-root MuiTableCell-alignRight css-1thfh4x">
+            <div class="exch-odd-view">
+                <div class="button-content back">
+                    <div class="price">{{tableColumn.back12}}</div>
+                    <div class="size">20.00</div>
+                </div>
+                <div class="button-content lay">
+                    <div class="price">{{tableColumn.lay12}}</div>
+                    <div class="size">6.00</div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</tbody>

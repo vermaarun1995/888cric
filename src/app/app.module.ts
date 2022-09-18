@@ -26,6 +26,11 @@ import { BetSlipComponent } from './components/bet-slip/bet-slip.component';
 import { OpenBetsComponent } from './components/open-bets/open-bets.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { AccountInfoComponent } from './components/account-info/account-info.component';
+import { InplayComponent } from './components/inplay/inplay.component';
+import { TableRowComponent } from './components/table-row/table-row.component';
+import { AllsportHighlightComponent } from './components/allsport-highlight/allsport-highlight.component';
+import { ThousandSuffixesPipe } from './helpers/thousand-suffixes.pipe';
+import { ChangepasswordComponent } from './components/changepassword/changepassword.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +49,12 @@ import { AccountInfoComponent } from './components/account-info/account-info.com
     BetSlipComponent,
     OpenBetsComponent,
     SettingsComponent,
-    AccountInfoComponent
+    AccountInfoComponent,
+    InplayComponent,
+    TableRowComponent,
+    AllsportHighlightComponent,
+    ThousandSuffixesPipe,
+    ChangepasswordComponent
   ],
   imports: [
     BrowserModule,

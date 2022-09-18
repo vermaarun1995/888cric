@@ -1,1 +1,9 @@
-<app-match-odds></app-match-odds>
+<ng-container *ngIf="matchOddsData && matchOddsData.length > 0">
+    <app-match-odds [matchOddsData]="matchOddsData" [isUserLogin]="isUserLogin" [inPlay]="inPlay" [sportId]="sportId" [marketId]="marketId"></app-match-odds>
+</ng-container>
+<!-- <ng-container *ngIf="bookmakerData && bookmakerData.length > 0">
+    <app-bookmaker [bookmakerData]="bookmakerData"></app-bookmaker>
+</ng-container>
+<ng-container *ngIf="fancyBetData && bookmakerData.length > 0">
+    <app-fancy-bet [fancyBetData]="fancyBetData"></app-fancy-bet>
+</ng-container> -->
