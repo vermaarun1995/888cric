@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { InplayComponent } from './components/inplay/inplay.component';
 import { LoginComponent } from './components/login/login.component';
 import { MyBetsComponent } from './components/my-bets/my-bets.component';
+import { RegisterComponent } from './components/register/register.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { StatementsComponent } from './components/statements/statements.component';
 import { WithdrawComponent } from './components/withdraw/withdraw.component';
@@ -16,6 +17,7 @@ import { WithdrawComponent } from './components/withdraw/withdraw.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'home', component: InplayComponent },
   { path: 'inplay', component: InplayComponent },
   { path: 'allsport-highlight/:id', component: AllsportHighlightComponent },

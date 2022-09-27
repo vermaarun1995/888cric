@@ -1,0 +1,119 @@
+.mobile .login {
+    background-size: 45%
+}
+.login {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.login-page {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+}
+
+.login-page .header-top {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.login .login-page .logo-img {
+    // background: url(../images/lotus/lotus-logo.png) center center no-repeat;
+    height: 109px;
+    width: 100%;
+    display: block;
+    margin-top: -7px;
+    margin-bottom: -32px;
+    background-size: 65%
+}
+
+.login .login-page .header-top .login-form input {
+    border-radius: 3px;
+    font-size: 13px;
+    border: 2px solid #DDD
+}
+
+.login .login-page .header-top .login-form input:focus {
+    outline: 0 !important;
+    border: 1px solid #000;
+    box-shadow: none
+}
+
+.login .login-page .header-top .login-form .captcha-div {
+    margin-bottom: 18px !important
+}
+
+.login .login-page .header-top .login-form .captcha-div .code {
+    border-radius: 4px;
+    line-height: 32px;
+    border: 2px solid #DDD
+}
+
+.login .login-page .header-top .login-form .login-btn .btn-login {
+    opacity: 1;
+    font-size: 14px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom-color: #0b1c1f;
+    border-right-color: #0b1c1f
+}
+
+.login .login-page .header-top .login-form .login-btn .btn-login:hover, .login .login-page .header-top .login-form .login-btn .btn-login:focus {
+    background: #1f5058!important;
+    color: #FFF!important;
+    border: none!important;
+}
+
+.login .login-page .header-top .login-form .powerby-div .powerby-img {
+    background-size: 40%;
+    background-position: center top;
+    margin-top: 20px
+}
+
+.powerby-div .powerby-img {
+    // background: url(../images/lotus/powered_by_betfair_light.svg) no-repeat;
+    height: 100px;
+    display: block
+}
+
+.captcha-div .code {
+    background-color: #fff
+}
+
+.captcha-div .code .fa-refresh {
+    margin-right: 5px
+}
+
+.login-top .logo-img {
+    // background: url(../images/lotus/lotus-logo.png) center center no-repeat;
+    height: 75px;
+    width: 100%;
+    display: block;
+    margin-top: -7px;
+    margin-bottom: -27px;
+    background-size: contain
+}
+.login-page .header-top .login-form .login-btn .btn-login {
+    color: #fff;
+    font-size: 15px;
+    border-radius: 3px;
+    background-color: #183f45;
+    border-bottom-color: #0b1c1f;
+    border-right-color: #0b1c1f;
+    padding: 7px 16px;
+}
+.login .login-page .header-top .login-form .login-btn .btn-login {
+    opacity: 1;
+    font-size: 14px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom-color: #0b1c1f;
+    border-right-color: #0b1c1f;
+}
+.grid-spinner, .grid-spinner .outside {
+    height: 58px;
+    margin-bottom: -28px;
+    margin-top: -24px;
+}

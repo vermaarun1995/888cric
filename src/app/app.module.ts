@@ -31,6 +31,7 @@ import { TableRowComponent } from './components/table-row/table-row.component';
 import { AllsportHighlightComponent } from './components/allsport-highlight/allsport-highlight.component';
 import { ThousandSuffixesPipe } from './helpers/thousand-suffixes.pipe';
 import { ChangepasswordComponent } from './components/changepassword/changepassword.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ChangepasswordComponent } from './components/changepassword/changepassw
     TableRowComponent,
     AllsportHighlightComponent,
     ThousandSuffixesPipe,
-    ChangepasswordComponent
+    ChangepasswordComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
