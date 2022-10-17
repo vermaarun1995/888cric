@@ -8,12 +8,12 @@
                 <div class="col-sm-12 login-form">
                     <div class="row">
                         <div class="login-bottom">
-                            <form class="form-signin" name="loginform">
+                            <form [formGroup]="loginForm" method="post" role="form" class="form-signin" name="loginform" (ngSubmit)="loginFormSubmit()">
                                 <p class="login-user">
-                                    <input maxlength="200" placeholder="Enter User Name" class="form-control">
+                                    <input type="text" maxlength="200" formControlName="username" placeholder="Enter User Name" class="form-control">
                                 </p>
                                 <p>
-                                    <input type="password" placeholder="Enter Password" ng-maxlength="16"
+                                    <input type="password" formControlName="password" placeholder="Enter Password" ng-maxlength="16"
                                         class="form-control">
                                 </p>
                                 <p class="login-btn mb-1">
