@@ -1,4 +1,9 @@
-<header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorTransparent MuiAppBar-positionFixed main-header mui-fixed css-wl4deo">
+<style>
+    .loginbtn[_ngcontent-tco-c24] {
+    padding-left: 8px;
+}
+</style>
+<header class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorTransparent MuiAppBar-positionFixed main-header mui-fixed css-wl4deo" *ngIf="isLoginUser">
     <div class="MuiToolbar-root css-6tsndk">
         <div class="providers-ctn web-view">
             <a class="navlink" href="">
@@ -16,7 +21,9 @@
         </div>
         <div class="balance-ctn">
             <button class="MuiButton-contained MuiButton-containedPrimary MuiButton-sizeSmall MuiButton-containedSizeSmall bal-btn css-1lpukdo" tabindex="0" type="button">
-                <div class="web-view">Balance :12842.4 <span class="MuiTouchRipple-root css-w0pj6f"></span></div>
+                <div class="web-view"><i class="fa fa-user" aria-hidden="true"></i><strong style="padding-right: 15px;">{{loginUserName}}</strong><span class="MuiTouchRipple-root css-w0pj6f"></span></div>
+                <div class="web-view">Balance :12842.4<span class="MuiTouchRipple-root css-w0pj6f"></span></div>
+                <!-- <div _ngcontent-tco-c24="" class="loginbtn user" style="font-size: 10px;"><span _ngcontent-tco-c24="" class="ripple active"><i _ngcontent-tco-c24="" aria-hidden="true" class="fa fa-user-circle-o"></i> <strong>{{loginUserName}}</strong><br _ngcontent-tco-c24=""><i _ngcontent-tco-c24="" aria-hidden="true" class="fa fa-inr"></i> 12766.4</span></div> -->
             </button>
             <button class="MuiButton-text MuiButton-sizeSmall MuiButton-textSizeSmall refrsh-btn web-view css-1rtnrqa" tabindex="0" type="button">
                 <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv"
@@ -33,6 +40,7 @@
                 <input type="checkbox" name="darkTheme" class="slider" id="switchCheckBox">
                 <span class="slider round"></span>
             </label>
+            <div _ngcontent-tco-c24="" class="loginbtn"><button _ngcontent-tco-c24="" type="button" class="btn ripple active" (click)="userLogout()"><a _ngcontent-tco-c24="" href="#"><i _ngcontent-tco-c24="" class="fa fa-power-off"></i></a></button></div>
         </div>
     </div>
 </header>

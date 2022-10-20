@@ -3,6 +3,8 @@ import { ResponseModel } from 'src/app/models/responseModel';
 import { SportList } from 'src/app/models/sportList';
 import { HttpService } from 'src/app/services/http.service';
 import { LoaderService } from 'src/app/services/loader.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { SessionService } from 'src/app/services/session.service';
 
 @Component({
   selector: 'app-sport-header',
@@ -11,9 +13,10 @@ import { LoaderService } from 'src/app/services/loader.service';
 })
 export class SportHeaderComponent implements OnInit {
 
-  constructor(private service : HttpService, private loaderService : LoaderService) { }
+  constructor(private service : HttpService, private loaderService : LoaderService, private authService: AuthService, private sessionService: SessionService) { }
 
   sidebarList : SportList[] = [];
+  isLoginUser: boolean = false;
 
   getSportList(): void {
     this.service.get('exchange/GetSports')
@@ -22,6 +25,16 @@ export class SportHeaderComponent implements OnInit {
         this.sidebarList.push(...res.data);
       }
     });
+    this.authService._isLoginUser.subscribe(
+      (res) => {
+        this.isLoginUser = res;
+        // if (res && this.sessionService.getLoggedInUser() !== null && this.sessionService.getLoggedInUser().id > 0) {
+        //   // this.loginUserName = this.sessionService.getLoggedInUser().fullName;
+        //   // this.loginExposureLimit = this.sessionService.getLoggedInUser().exposureLimit;
+        //   // this.loginBalance = this.sessionService.getLoggedInUser().assignCoin;
+        // }
+      }
+    )
   }
 
   ngOnInit(): void {

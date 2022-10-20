@@ -37,7 +37,8 @@
               "src/assets/css/SportView.scss",
               "src/assets/css/custom.scss",
               "src/assets/css/live-events-page.scss",
-              "src/assets/css/LobbyView.scss"
+              "src/assets/css/LobbyView.scss",
+              "node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": []
           },
