@@ -1,5 +1,6 @@
 .MuiTableMobile{
     display: none !important;
+
 }
 
 
@@ -25,6 +26,34 @@
     border-radius: 0px;
 }
 
+@media (max-width: 920px){
+.events-table-ctn .event-table-mob-view .event-table-mob-container .event-table-mob .event-table-mob-body .event-detail-mob .event-table-odds-ctn {
+    display: flex;
+    border-bottom: 0!important;
+    padding-right: 1%;
+}
+.events-table-ctn .event-table-mob-view .event-table-mob-container .event-table-mob .event-table-mob-body .event-detail-mob .event-table-odds-ctn .event-table-odds-row {
+    display: flex!important;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 98%;
+}
+.css-1o6fzn1 {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    display: table-cell;
+    vertical-align: inherit;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    text-align: left;
+    padding: 6px 16px;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+
+}
 @media screen and (max-width: 920px)
 {
     .MuiTableMobile{
