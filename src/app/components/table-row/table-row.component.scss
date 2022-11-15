@@ -1,9 +1,7 @@
-.MuiTableMobile{
+.MuiTableMobile {
     display: none !important;
 
 }
-
-
 
 .css-1xnox0e {
     display: table-row-group;
@@ -26,59 +24,64 @@
     border-radius: 0px;
 }
 
-@media (max-width: 920px){
-.events-table-ctn .event-table-mob-view .event-table-mob-container .event-table-mob .event-table-mob-body .event-detail-mob .event-table-odds-ctn {
-    display: flex;
-    border-bottom: 0!important;
-    padding-right: 1%;
-}
-.events-table-ctn .event-table-mob-view .event-table-mob-container .event-table-mob .event-table-mob-body .event-detail-mob .event-table-odds-ctn .event-table-odds-row {
-    display: flex!important;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 98%;
-}
-.css-1o6fzn1 {
-    font-family: Roboto, Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    font-size: 0.875rem;
-    line-height: 1.43;
-    letter-spacing: 0.01071em;
-    display: table-cell;
-    vertical-align: inherit;
-    border-bottom: 1px solid rgb(224, 224, 224);
-    text-align: left;
-    padding: 6px 16px;
-    color: rgba(0, 0, 0, 0.87);
-}
+@media (max-width: 920px) {
+    .events-table-ctn .event-table-mob-view .event-table-mob-container .event-table-mob .event-table-mob-body .event-detail-mob .event-table-odds-ctn {
+        display: flex;
+        border-bottom: 0 !important;
+        padding-right: 1%;
+    }
+
+    .events-table-ctn .event-table-mob-view .event-table-mob-container .event-table-mob .event-table-mob-body .event-detail-mob .event-table-odds-ctn .event-table-odds-row {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 98%;
+    }
+
+    .css-1o6fzn1 {
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.43;
+        letter-spacing: 0.01071em;
+        display: table-cell;
+        vertical-align: inherit;
+        border-bottom: 1px solid rgb(224, 224, 224);
+        text-align: left;
+        padding: 6px 16px;
+        color: rgba(0, 0, 0, 0.87);
+    }
 
 
 }
-@media screen and (max-width: 920px)
-{
-    .MuiTableMobile{
+
+@media screen and (max-width: 920px) {
+    .MuiTableMobile {
         display: block !important;
     }
-    .MuiTableDesktop{
+
+    .MuiTableDesktop {
         display: none !important;
     }
+
     .mt-100 {
         top: 110px;
         position: relative;
         width: 100%;
-        font-family: var(--font-family)!important;
-        display: table!important;
+        font-family: var(--font-family) !important;
+        display: table !important;
         margin: auto;
         overflow: hidden;
         z-index: 1;
     }
+
     .events-table-ctn .event-table-mob-view .event-table-mob-container .event-table-mob .event-table-mob-body .MuiTableRow-root {
-        border-bottom: 0!important;
-        padding: 0!important;
+        border-bottom: 0 !important;
+        padding: 0 !important;
         display: block;
         flex-direction: column;
-        margin: 0!important;
-        width: 100%;        
+        margin: 0 !important;
+        width: 100%;
     }
 }
 
@@ -86,8 +89,8 @@
     top: 118px;
     position: relative;
     width: 100%;
-    font-family: var(--font-family)!important;
-    display: table!important;
+    font-family: var(--font-family) !important;
+    display: table !important;
     margin: auto;
     overflow: hidden;
     z-index: 1;
@@ -111,12 +114,131 @@
     border-spacing: 0px;
 }
 
-@media only screen and (min-width: 800px){
+@media only screen and (min-width: 800px) {
     .MuiPaper-root .MuiTableBody-root .MuiTableCell-body {
-        padding: 1px!important;
+        padding: 1px !important;
     }
 }
 
 .MuiPaper-root .MuiTableBody-root .MuiTableCell-body {
-    padding: 6px!important;
+    padding: 6px !important;
+}
+
+.navlink,
+.scorecard-section {
+    color: var(--text-color) !important;
+}
+
+.navlink {
+    text-decoration: none;
+}
+
+.events-table-ctn .MuiTableContainer-root .MuiTable-root .MuiTableBody-root .date {
+    max-width: 80px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.exch-odd-view {
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    padding: 3px 2px;
+    cursor: pointer;
+    margin-top: 0;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+@media (max-width: 920px) {
+    .exch-odd-view .button-content .price .lock-img {
+        height: 18px;
+        width: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3px;
+        color: var(--text-primary);
+    }
+
+    .exch-odd-view .button-content .price {
+        font-size: 11px;
+        font-weight: 700;
+        text-align: center;
+        align-items: center;
+        color: var(--odds-color);
+    }
+
+    .exch-odd-view .button-content .size {
+        font-size: 9px;
+        text-align: center;
+        color: var(--odds-color);
+        padding-top: 0;
+        opacity: 1;
+    }
+
+    .exch-odd-view .back {
+        background: var(--back-bg) !important;
+    }
+
+    .exch-odd-view .lay {
+        background: var(--lay-bg) !important;
+    }
+
+    .exch-odd-view .button-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 34px !important;
+        max-height: 34px !important;
+        border: 10px !important;
+        text-align: center;
+        border-radius: 0;
+        vertical-align: baseline;
+        padding: 0;
+        margin: 0;
+        min-width: 3.6rem !important;
+        width: 100%;
+    }
+
+    .events-table-ctn .event-table-mob-view .event-table-mob-container .event-table-mob .event-table-mob-body .event-detail-mob .mob-event-name .navlink {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-top: 5px;
+        cursor: pointer;
+        color: var(--text-color);
+    }
+
+    .events-table-ctn .event-table-mob-view .event-table-mob-container .event-table-mob .event-table-mob-body .event-detail-mob .mob-event-name .navlink .eventname {
+        font-weight: 700;
+    }
+
+    .events-table-ctn .event-table-mob-view .event-table-mob-container .event-table-mob .event-table-mob-body .event-detail-mob .event-table-odds-ctn {
+        display: flex;
+        border-bottom: 0 !important;
+        padding-right: 1%;
+    }
+
+    .events-table-ctn .event-table-mob-view .event-table-mob-container .event-table-mob .event-table-mob-body .event-detail-mob .event-table-odds-ctn .event-table-odds-row {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 98%;
+    }
+
+    .events-table-ctn .event-table-mob-view .event-table-mob-container .event-table-mob .event-table-mob-body .event-detail-mob {
+        padding: 0 !important;
+        display: block;
+        flex-direction: column;
+        margin: 0 !important;
+        width: 100%;
+        border-bottom: 0 !important;
+    }
+
+    .events-table-ctn .event-table-mob-view .event-table-mob-container .event-table-mob .event-table-mob-body .MuiTableRow-root {
+        border-bottom: 0 !important;
+    }
+
 }
