@@ -3124,7 +3124,8 @@ img{
 }
 
 .MuiPaper-root .MuiTableBody-root .MuiTableCell-body {
-    padding: 6px !important
+    padding: 6px !important;
+    display: block;
 }
 
 .fm-table-ctn {
@@ -4615,7 +4616,7 @@ img{
 
 @media only screen and (min-width:800px) {
     .MuiPaper-root .MuiTableBody-root .MuiTableCell-body {
-        padding: 1px !important
+        padding: 1px !important;
     }
 }
 

@@ -123,12 +123,15 @@
 </tr>    
 </tbody> -->
 <tbody class="MuiTableBody-root event-table-mob-body css-1xnox0e MuiTableMobile">
-<tr class="MuiTableRow-root css-1gqug66 MuiTableMobile" *ngFor="let tableColumn of tableRowList">
+<tr class="MuiTableRow-root css-1gqug66 MuiTableMobile" *ngFor="let tableColumn of tableRowList" [routerLink]="['/fullmarket', tableColumn.marketId, tableColumn.gameId, tableColumn.eid]">
     <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft MuiTableCell-sizeSmall event-detail-mob css-1o6fzn1"
         scope="row" >
-        <div class="mob-event-name"><a class="navlink" [routerLink]="['/fullmarket', tableColumn.marketId, tableColumn.gameId, tableColumn.eid]">
+        <div class="mob-event-name">
+            <a class="navlink d-flex gap-2" [routerLink]="['/fullmarket', tableColumn.marketId, tableColumn.gameId, tableColumn.eid]">
                 <div class="eventname">{{tableColumn.eventName.split("/")[0]}}</div>
-                <div class="inplay-icon"></div>
+                <div class="inplay-icon">
+                    <img src="../assets/img/inplay.540d59a5.svg" width="14px" alt="live" *ngIf="tableColumn.inPlay=='True'">
+                </div>
             </a>
             <div class="date">{{ tableColumn.eventDate | date : 'medium' }}</div>
         </div>
