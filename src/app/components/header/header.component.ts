@@ -29,9 +29,11 @@ export class HeaderComponent implements OnInit {
         }
       }
     )
+    this.getOpeningBalance();
   }
 
   getOpeningBalance() : void {
+    debugger;
     let userId = this.sessionService.getLoggedInUser().id;
     this.service.get(`Account/GetOpeningBalance?UserId=${userId}`)
       .subscribe((response:ResponseModel) => {
