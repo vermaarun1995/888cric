@@ -34,7 +34,6 @@ export class MatchOddsComponent implements OnInit {
   stackData?: Observable<StackLimit[]>;
   stackLimitList: StackLimit[] = [];
 
-  matchOddsForm: FormGroup;
   OldBidData: any[] = [];
   BidData: any[] = [];
   BidDataNew: any[] = [];
@@ -57,40 +56,15 @@ export class MatchOddsComponent implements OnInit {
     private notification: NotificationService,
     private activatedRoute: ActivatedRoute,
     private authService: AuthService,
-    private fb: FormBuilder,
     private betService: BetService,
     private loaderService: LoaderService
   ) {
+    this.authService._isLoginUser.subscribe((res) => this.isUserLogin = res);
+  }
 
-    this.matchOddsForm = this.fb.group({
-      sportId: [this.sportId],
-      EventId: [''],
-      event: [''],
-      MarketId: [''],
-      market: [''],
-      selection: [''],
-      selectionId: [],
-      OddsType: [1],
-      type: [''],
-      oddsRequest: [''],
-      amountStake: [''],
-      betType: [],
-      isSettlement: [2]
-    })
-  }
-  ngDoCheck(): void {
-    //console.log("ngDoCheck");
-    if (this.oddsRequestFocusVal == true) {
-      this.oddRequestEle?.nativeElement.focus();
-    }
-    if (this.stackAmountFocusVal == true) {
-      this.stackAmountEle?.nativeElement.focus();
-    }
-  }
   ngOnChanges(changes: SimpleChanges): void {
 
   }
-
 
   closeBetSlipType($event:boolean){
     if($event === true){
@@ -100,33 +74,22 @@ export class MatchOddsComponent implements OnInit {
 
   setBetData?: betData;
 
-  setBetPrice(type:string, eventName:string, name:string, price:number){
+  setBetPrice(EventId :number, event:string, MarketId:number, market:string, selection:string, selectionId:number, type:number,oddsRequest:number, amountStake:number, betType:number){
     this.setBetData = {
-      eventName : eventName,
-      betType : type,
-      batName : name,
-      betPrice : price
+      sportId: this.sportId,
+      EventId: EventId,
+      event: event,
+      MarketId: MarketId,
+      market: market,
+      selection: selection,
+      selectionId: selectionId,
+      OddsType: 1,
+      type: type ? 'lay' : 'back',
+      oddsRequest: oddsRequest,
+      amountStake: amountStake,
+      betType: betType,
+      isSettlement: 2
     }   
-  }
-
-
-
-  openOrderRow: any = (index: number, exEventId: number, exMarketId: number, selectionId: number, betType: number, price: number, runnerName: string) => {
-
-    this.selectedIndex = index;
-    this.selectionId = selectionId;
-    this.betType = betType;
-    this.bidPriceInput = price;
-    this.runnerName = runnerName;
-
-    this.matchOddsForm.patchValue({
-      betType: this.selectedIndex,
-      selectionId: this.selectionId,
-      selection: this.runnerName,
-      type: this.betType,
-      sportId: this.sportId
-    })
-
   }
 
   getBackLayAmount() {
@@ -140,7 +103,6 @@ export class MatchOddsComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.service.get('Setting/GetStakeLimit').subscribe(res =>{
       if(res.data != null && res.isSuccess == true){
         this.stackLimitList = res.data;
@@ -149,125 +111,30 @@ export class MatchOddsComponent implements OnInit {
 
     this.activatedRoute.params.subscribe(paramsId => {
       this.sportId = this.sportId ? this.sportId : paramsId["sportId"];
-      this.marketId = this.sportId ? this.marketId : paramsId["marketId"];
+      this.marketId = this.marketId ? this.marketId : paramsId["marketId"];
       this.getBackLayAmount();
     });
 
 
   }
 
-  /******** Match Odds Bid Price *******/
-  oddsRequestFocusVal: boolean = false;
-  oddsRequestFocus(value: boolean) {
-    this.oddsRequestFocusVal = value;
-  }
-  stackAmountFocusVal: boolean = false;
-  stackAmountFocus(value: boolean) {
-    this.stackAmountFocusVal = value;
-  }
-
-  OpenBidPrice(stackValue?: any, oddsRequest?: any, betType: number = 0, selectionId?: string) {
-    betType = this.betType || 0;
-    if (typeof stackValue == 'object') {
-      stackValue = stackValue.target.value;
-    }
-    if (typeof oddsRequest == 'object') {
-      oddsRequest = oddsRequest.target.value;
-    }
-    this.oddBook = true;
-    this.BidDataNew = this.BidDataNew.reduce((a, v, i) => {
-      const [key, value] = Object.entries(v);
-      this.BidDataNew[i][key[0]] = 0;
-      if (key[0] == selectionId) {
-        v[key[0]] = betType == 0 ? parseInt(this.BidData[i][key[0]]) + ((oddsRequest * parseInt(stackValue)) - parseInt(stackValue)) : parseInt(this.BidData[i][key[0]]) - ((oddsRequest * parseInt(stackValue)) - parseInt(stackValue));
-      } else {
-        v[key[0]] = betType == 0 ? parseInt(this.BidData[i][key[0]]) - parseInt(stackValue) : parseInt(this.BidData[i][key[0]]) + parseInt(stackValue);
-      }
-      v[key[0]] = Math.trunc(100 * v[key[0]]) / 100;
-      a.push(v);
-      return a;
-    }, []);
-
-  }
-
-  closeOrderRow() {
-    this.oddBook = false;
-    this.selectionId = 0;
-    this.bidOddPrice = 0;
-  }
-
-
-  setBidPrice(stackValue?: any, oddsRequest?: any, betType?: any, selectionId?: string, type?: string) {
-    if (type == 'plus') {
-      if (oddsRequest > 20) {
-        oddsRequest += 1;
-      } else if (oddsRequest > 10) {
-        oddsRequest = oddsRequest + 0.5;
-      } else {
-        oddsRequest = oddsRequest + 0.2;
-      }
-    }
-    if (type == 'minus') {
-      if (parseInt(oddsRequest) > 1) {
-        if (oddsRequest > 20) {
-          oddsRequest -= 1;
-        } else if (oddsRequest > 10) {
-          oddsRequest = oddsRequest - 0.5;
-        } else {
-          oddsRequest = oddsRequest - 0.2;
-        }
-      }
-    }
-
-    this.bidPriceInput = parseFloat(oddsRequest.toFixed(2));
-
-    this.bidOddPrice = stackValue;
-    this.OpenBidPrice(stackValue, oddsRequest, betType, selectionId);
-  }
-
-  saveMatchOdds() {
-
-    if (!this.isUserLogin) {
-      return;
-    }
-    let placeBetData = {
-      "id": 0,
-      "sportId": parseInt(this.matchOddsForm.value.sportId),
-      "EventId": parseInt(this.matchOddsForm.value.EventId),
-      "event": this.matchOddsForm.value.event,
-      "MarketId": this.matchOddsForm.value.MarketId,
-      "market": this.matchOddsForm.value.market,
-      "selection": this.matchOddsForm.value.selection,
-      "OddsType": this.matchOddsForm.value.OddsType,
-      "type": this.matchOddsForm.value.type ? 'lay' : 'back',
-      "oddsRequest": this.matchOddsForm.value.oddsRequest,
-      "amountStake": this.matchOddsForm.value.amountStake,
-      "betType": this.matchOddsForm.value.betType,
-      "isSettlement": this.matchOddsForm.value.isSettlement,
-      "userId": this.userId,
-      "SelectionId": this.matchOddsForm.value.selectionId
-    };
-
-    this.service.post('BetApi/SaveBets', placeBetData)
-      .subscribe((response: ResponseModel) => {
-        if (response.isSuccess == true) {
-          //this.notification.showSuccess(response.message);
-          this.closeOrderRow();
-          this.getBackLayAmount();
-          this.betService._getBetData.next(this.betService.getMarketList());
-        } else {
-          //this.notification.showError(response.message);
-        }
-        this.loaderService.isLoading.next(false);
-      });
-  }
 
 }
 
 
 export interface betData {
-  eventName : string;
-  betType : string;
-  batName : string;
-  betPrice : number;
+  sportId?: number;
+  EventId?: number;
+  event?: string;
+  MarketId?: number;
+  market?: string;
+  selection?: string;
+  selectionId?: number;
+  OddsType?: number;
+  type?: string;
+  oddsRequest?: number;
+  amountStake?: number;
+  betType?: number;
+  isSettlement?: number;
 }
+
