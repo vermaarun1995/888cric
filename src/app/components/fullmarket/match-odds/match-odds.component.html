@@ -168,8 +168,14 @@
                                         <td class="MuiTableCell-root MuiTableCell-body css-q34dxg">
                                             <div class="team">{{matchOddsPrice.runnerName}}</div>
                                             <div class="risk-ctn">
-                                                <div></div>
-                                                <div></div>
+                                                <div><span [ngClass]="{'loss' : betType == 1 && matchOddsPrice.selectionId == selectionId, 'profit' : betType == 0 && matchOddsPrice.selectionId == selectionId }" *ngIf="stackValue > 0 &&  oddValue > 0 && matchOddsPrice.selectionId == selectionId">
+                                                    <span *ngIf="betType == 0">+{{oddValue | number : '1.2-2'}}</span>
+                                                    <span *ngIf="betType == 1">-{{oddValue | number : '1.2-2'}}</span>
+                                                </span></div>
+                                                <div><span [ngClass]="{'loss' : betType != 1 && matchOddsPrice.selectionId != selectionId, 'profit' : betType != 0 && matchOddsPrice.selectionId != selectionId }" *ngIf="stackValue > 0 &&  oddValue > 0 && matchOddsPrice.selectionId != selectionId">
+                                                    <span *ngIf="betType != 0">+{{stackValue}}</span>
+                                                    <span *ngIf="betType != 1">-{{stackValue}}</span>
+                                                </span></div>
                                             </div>
                                         </td>
                                         <td class="MuiTableCell-root MuiTableCell-body odds-cell css-q34dxg">
@@ -216,9 +222,9 @@
                     class="MuiPaper-root right-side-accordion css-67l5gl">
                     <ngb-panel id="toggle-1">
                         <ng-template ngbPanelHeader>
-                            <button
+                            <button [ngClass]="{'collapsed' : acc.isExpanded('toggle-1') }"
                                 class="MuiButtonBase-root right-side-accordion-summary css-1iji0d4 w-100 accordion-button"
-                                ngbPanelToggle>
+                                (click)="closeBetSlipType(openBetBox)">
                                 <div class="css-17o5nyn">
                                     <p class="MuiTypography-root MuiTypography-body1 css-1unqu1b">BET SLIP (0)</p>
                                 </div>
@@ -227,7 +233,7 @@
                         <ng-template ngbPanelContent>
                             <div class="MuiCollapse-root css-a0y2e3">
                                 <app-bet-slip [stackLimitList]="stackLimitList" [inPlay]="inPlay" [setBetData]="setBetData" [sportId]="sportId" [isUserLogin]="isUserLogin"
-                                    (closeBetSlip)="closeBetSlipType($event)"></app-bet-slip>
+                                    (closeBetSlip)="closeBetSlipType($event)" (getBetCalc)="getBetCalcData($event)"></app-bet-slip>
                             </div>
                         </ng-template>
                     </ngb-panel>

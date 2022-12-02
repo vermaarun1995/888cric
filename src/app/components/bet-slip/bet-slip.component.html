@@ -37,11 +37,11 @@
                     </div>
                     <div class="input-row-ctn">
                         <div class="row-header">{{setBetData?.betType == 0 ? 'Stake' : 'Profit'}}</div>
-                        <input class="row-input" type="number" [(ngModel)]="amountStake" (change)="setBidPriceData(amountStake)" readonly inputmode="numeric" style="height: 30px; border: 0px; padding: 2px;">
+                        <input class="row-input" type="number" [(ngModel)]="amountStake" (change)="setBidPriceData(amountStake)" inputmode="numeric" style="height: 30px; border: 0px; padding: 2px;">
                     </div>
                 </div>
                 <div class="clear-row">
-                    <span class="text b-text">Clear</span>
+                    <span class="text b-text" (click)="setBidPriceData(0)">Clear</span>
                 </div>
                 <div class="quick-bet" *ngIf="stackLimitList">
                     <ng-container *ngFor="let stackLimit of stackLimitList">
@@ -56,8 +56,8 @@
                 <div class="stake-value">INR. <span class="{{setBetData?.betType == 0 ? 'profit' : 'loss'}}"> {{profitLossPrice |  number : '1.2-2'}}</span>
                 </div>
             </div>
-            <div class="place-section"><button class="place-btn" [ngClass]="{'disable' : !isUserLogin || !inPlay }"
-                [disabled]="!isUserLogin || !inPlay" (click)="saveMatchOdds()" style="cursor:pointer;">
+            <div class="place-section"><button class="place-btn" [ngClass]="{'disable' : !isUserLogin || !inPlay || amountStake == 0 }"
+                [disabled]="!isUserLogin || !inPlay || amountStake == 0" (click)="saveMatchOdds()" style="cursor:pointer;">
                     <div class="label">Place Bet</div>
                 </button></div>
         </div>

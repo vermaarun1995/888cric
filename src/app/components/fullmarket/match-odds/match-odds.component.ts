@@ -1,5 +1,4 @@
-import { Component, ElementRef, Input, OnInit, SimpleChanges, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, Input, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbAccordion } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
@@ -26,29 +25,26 @@ export class MatchOddsComponent implements OnInit {
   @Input() marketId?: number;
   userId: number = this.sessionService.getLoggedInUser() ? this.sessionService.getLoggedInUser().id : 0;
 
-  @ViewChild('stackAmountEle') stackAmountEle?: ElementRef;
-  @ViewChild('oddRequestEle') oddRequestEle?: ElementRef;
   @ViewChild('acc') getNgbAccordion?: NgbAccordion;
+  openBetBox : boolean = false;
 
 
   stackData?: Observable<StackLimit[]>;
   stackLimitList: StackLimit[] = [];
 
-  OldBidData: any[] = [];
   BidData: any[] = [];
   BidDataNew: any[] = [];
-
-  exEventId?: number;
-  selectionId: number = 0;
-  selectedIndex?: number;
-  betType?: number;
-  selectedValue?: number;
-  runnerName?: string;
 
 
   bidPriceInput: number = 0;
   bidOddPrice: number = 0;
   oddBook: boolean = false;
+
+
+  stackValue : any = 0;
+  oddValue : any = 0;
+  selectionId : any = 0;
+  betType : any = 0;
 
   constructor(
     private service: HttpService,
@@ -68,7 +64,7 @@ export class MatchOddsComponent implements OnInit {
 
   closeBetSlipType($event:boolean){
     if($event === true){
-      this.getNgbAccordion?.collapse("toggle-1");
+      this.getNgbAccordion?.toggle("toggle-1");
     }
   }
 
@@ -118,6 +114,16 @@ export class MatchOddsComponent implements OnInit {
 
   }
 
+  getBetCalcData(event : betCalc){
+    this.openBetBox = true;
+    this.stackValue = Number(event.stakeValue);
+    this.oddValue = Number(event.oddsValue);
+    this.selectionId = Number(event.selectionId);
+    this.betType = Number(event.betType);
+  }
+
+
+
 
 }
 
@@ -136,5 +142,12 @@ export interface betData {
   amountStake?: number;
   betType?: number;
   isSettlement?: number;
+}
+
+export interface betCalc {
+  oddsValue?: number;
+  stakeValue?: number;
+  selectionId?: number;
+  betType?: number;
 }
 
