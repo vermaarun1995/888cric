@@ -1,0 +1,32 @@
+<form [formGroup]="depositForm" (ngSubmit)="saveDeposit()">
+<div class="diposit-form-sec">
+    <div class="diposit-sec">
+        <div class="diposit-inner">
+            <h1>{{userData?.fullName}}</h1>
+            <p>{{userData?.phoneNumber}}</p>
+            <span>₹ 1000</span>
+        </div>
+        <div class="using-sec">
+            <p>PAY USING UPI APP</p>
+            <div class="upi-app-sec">
+                <h2><span><img src="../assets/img/upi-img.svg" alt=""></span>UPI APP</h2>
+                <p> Google Pay, BHIM, PhonePe & more</p>
+              <div class="payment-img"><img src="../assets/img/pay.png" alt=""></div>
+              <form action="">
+                <p>{{upiData?.upiId}}
+                <a href="#"><i class="fa fa-clone" aria-hidden="true"></i>copy</a>
+                </p>
+              </form>
+            </div>
+
+            <div class="submit-sec">
+            <form action="">
+                <input type="text">
+                <input class="submit" type="submit" value="submit">
+            </form>
+        </div>
+
+        </div>
+    </div>
+</div>
+</form>

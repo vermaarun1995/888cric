@@ -13,6 +13,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { StatementsComponent } from './components/statements/statements.component';
 import { WithdrawComponent } from './components/withdraw/withdraw.component';
+import { DepositpaymentComponent } from './components/depositpayment/depositpayment.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -28,8 +29,8 @@ const routes: Routes = [
   { path: 'statements', component: StatementsComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'account-info', component: AccountInfoComponent },
-  { path: 'changepassword', component: ChangepasswordComponent }
-  
+  { path: 'changepassword', component: ChangepasswordComponent },
+  { path: 'depositpayment', component: DepositpaymentComponent }
 ];
 
 @NgModule({

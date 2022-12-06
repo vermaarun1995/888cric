@@ -32,6 +32,7 @@ import { AllsportHighlightComponent } from './components/allsport-highlight/alls
 import { ThousandSuffixesPipe } from './helpers/thousand-suffixes.pipe';
 import { ChangepasswordComponent } from './components/changepassword/changepassword.component';
 import { RegisterComponent } from './components/register/register.component';
+import { DepositpaymentComponent } from './components/depositpayment/depositpayment.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { RegisterComponent } from './components/register/register.component';
     AllsportHighlightComponent,
     ThousandSuffixesPipe,
     ChangepasswordComponent,
-    RegisterComponent
+    RegisterComponent,
+    DepositpaymentComponent
   ],
   imports: [
     BrowserModule,
