@@ -40,14 +40,29 @@ export class DepositpaymentComponent implements OnInit {
   }
 
   saveDeposit(){
-
+debugger;
     let depositData = {
       "id": 0,
       "UserId": parseInt(this.depositForm.value.userId),
-      "Amount":0,
-      "ReferenceNumber":"",
-      "UpiId":""
+      "Amount":this.depositForm.value.amount,
+      "ReferenceNumber":this.depositForm.value.referenceNumber,
+      "UpiId":this.upiData?.upiId
     };
+
+    this.service.post('Setting/SaveDeposit', depositData)
+      .subscribe((response: ResponseModel) => {
+        if (response.isSuccess == true) {
+          alert(response.message);
+          //this.notification.showSuccess(response.message);
+          //this.closeOrderRow();
+          //this.getBackLayAmount();
+          //this.betService._getBetData.next(this.betService.getMarketList());
+        } else {
+          alert(response.message);
+          //this.notification.showError(response.message);
+        }
+        //this.loaderService.isLoading.next(false);
+      });
   }
 
 }
