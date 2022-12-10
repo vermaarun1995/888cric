@@ -88,7 +88,9 @@ export class MatchOddsComponent implements OnInit {
       betType: betType,
       isSettlement: 2
     }
+    this.selectionId = selectionId;
     this.openMobView = true;
+    this.stackValue = amountStake;
   }
 
   getBackLayAmount() {

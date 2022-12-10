@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, OnChanges, SimpleChanges, ViewChild, ElementRef, DoCheck, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { map } from 'rxjs';
 import { ResponseModel } from 'src/app/models/responseModel';
@@ -13,9 +13,10 @@ import { betCalc, betData } from '../fullmarket/match-odds/match-odds.component'
 @Component({
   selector: 'app-bet-slip',
   templateUrl: './bet-slip.component.html',
-  styleUrls: ['./bet-slip.component.scss']
+  styleUrls: ['./bet-slip.component.scss'],
+  changeDetection : ChangeDetectionStrategy.OnPush
 })
-export class BetSlipComponent implements OnInit, OnChanges {
+export class BetSlipComponent implements OnInit, OnChanges, DoCheck {
 
   @Input() sportId?: number;
   @Input() stackLimitList: StackLimit[] = [];
@@ -39,7 +40,28 @@ export class BetSlipComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     this.amountStake = this.setBetData?.amountStake ? this.setBetData.amountStake : 0;
     this.oddsRequest = this.setBetData?.oddsRequest ? this.setBetData.oddsRequest : 0;
-    this.setBidPriceData(this.amountStake);
+    //this.setBidPriceData(this.amountStake);
+  }
+
+  @ViewChild('stackAmountEle') stackAmountEle? : ElementRef;
+  @ViewChild('oddRequestEle') oddRequestEle ? : ElementRef;
+
+  oddsRequestFocusVal : boolean  = false;
+  oddsRequestFocus(value:boolean){
+    this.oddsRequestFocusVal = value;
+  }
+  stackAmountFocusVal : boolean  = false;
+  stackAmountFocus(value:boolean){
+    this.stackAmountFocusVal = value;
+  }
+
+  ngDoCheck(): void {
+    if(this.oddsRequestFocusVal == true){
+      this.oddRequestEle?.nativeElement.focus();
+    }
+    if(this.stackAmountFocusVal == true){
+      this.stackAmountEle?.nativeElement.focus();
+    }
   }
 
 

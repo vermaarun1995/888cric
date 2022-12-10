@@ -5,10 +5,11 @@
     white-space: break-spaces;
     font-size: 13px;
     line-height: 15px;
-    justify-content: end;
+    justify-content: space-between;
     padding-right: 4px;
     padding-top: 0;
     padding-bottom: 0;
     align-items: center;
     text-align: right;
+    display: flex;
 }

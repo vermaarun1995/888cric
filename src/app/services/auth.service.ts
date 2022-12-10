@@ -23,7 +23,7 @@ export class AuthService {
   public isLoggedIn(){
     let userData = this.session.getSession('USER_DATA');
     if(userData !== null && userData.userName !== null && userData.id > 0 && userData.roleId > 0){
-      this.route.navigateByUrl("/home");
+      //this.route.navigateByUrl("/home");
       return true;
     }
     return false;

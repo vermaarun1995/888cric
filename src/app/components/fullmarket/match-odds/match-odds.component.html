@@ -191,17 +191,18 @@
                                         <td class="MuiTableCell-root MuiTableCell-body css-q34dxg">
                                             <div class="team">{{matchOddsPrice.runnerName}}</div>
                                             <div class="risk-ctn">
-                                                <div><span
+                                                <div><div *ngIf="BidData[i][matchOddsPrice.selectionId] !=0" [ngClass]="{'loss' : BidData[i][matchOddsPrice.selectionId] < 0, 'profit' : BidData[i][matchOddsPrice.selectionId] > 0 }">{{BidData[i][matchOddsPrice.selectionId] > 0 ? '+' : ''}}{{BidData[i][matchOddsPrice.selectionId] | number : '1.2-2'}}</div></div>
+                                                <div class="text-right" *ngIf="stackValue > 0 &&  oddValue > 0 && matchOddsPrice.selectionId == selectionId"><span
                                                         [ngClass]="{'loss' : betType == 1 && matchOddsPrice.selectionId == selectionId, 'profit' : betType == 0 && matchOddsPrice.selectionId == selectionId }"
-                                                        *ngIf="stackValue > 0 &&  oddValue > 0 && matchOddsPrice.selectionId == selectionId">
+                                                        >
                                                         <span *ngIf="betType == 0">+{{oddValue | number :
                                                             '1.2-2'}}</span>
                                                         <span *ngIf="betType == 1">-{{oddValue | number :
                                                             '1.2-2'}}</span>
                                                     </span></div>
-                                                <div><span
+                                                <div class="text-right" *ngIf="stackValue > 0 &&  oddValue > 0 && matchOddsPrice.selectionId != selectionId"><span
                                                         [ngClass]="{'loss' : betType != 1 && matchOddsPrice.selectionId != selectionId, 'profit' : betType != 0 && matchOddsPrice.selectionId != selectionId }"
-                                                        *ngIf="stackValue > 0 &&  oddValue > 0 && matchOddsPrice.selectionId != selectionId">
+                                                        >
                                                         <span *ngIf="betType != 0">+{{stackValue}}</span>
                                                         <span *ngIf="betType != 1">-{{stackValue}}</span>
                                                     </span></div>
@@ -210,14 +211,16 @@
                                         <td class="MuiTableCell-root MuiTableCell-body odds-cell css-q34dxg">
                                             <div class="odds-block web-view back-odds-block">
                                                 <div class="exch-odd-view"
-                                                    *ngFor="let backPrice of matchOddsPrice.price.back"
-                                                    (click)="acc.expand('toggle-1'); setBetPrice(matchOdds.exEventId, matchOdds.eventName, matchOdds.marketId, matchOdds.marketName, matchOddsPrice.runnerName, matchOddsPrice.selectionId, 0, backPrice.price, 0, 0);">
-                                                    <div class="back-odd exch-odd-button">
+                                                    *ngFor="let backPrice of matchOddsPrice.price.back">
+                                                    <div class="back-odd exch-odd-button" *ngIf="backPrice.price > 0" (click)="acc.expand('toggle-1'); setBetPrice(matchOdds.exEventId, matchOdds.eventName, matchOdds.marketId, matchOdds.marketName, matchOddsPrice.runnerName, matchOddsPrice.selectionId, 0, backPrice.price, 0, 0);">
                                                         <div class="exch-odd-button-content">
                                                             <div class="price">{{backPrice.price}}</div>
                                                             <div class="size">{{ backPrice.size | thousandSuffixes : 2}}
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                    <div class="back-odd disabled exch-odd-button" *ngIf="backPrice.price == 0">
+                                                        <img class="lock-icon" slot="icon-only" src="../assets/img/Lock.32c76907.svg" alt="lock">
                                                     </div>
                                                 </div>
                                             </div>
@@ -225,14 +228,16 @@
                                         <td class="MuiTableCell-root MuiTableCell-body odds-cell css-q34dxg">
                                             <div class="odds-block web-view">
                                                 <div class="exch-odd-view"
-                                                    *ngFor="let layPrice of matchOddsPrice.price.lay"
-                                                    (click)="acc.expand('toggle-1'); setBetPrice(matchOdds.exEventId, matchOdds.eventName, matchOdds.marketId, matchOdds.marketName, matchOddsPrice.runnerName, matchOddsPrice.selectionId, 1, layPrice.price, 0, 1);">
-                                                    <div class="lay-odd exch-odd-button">
+                                                    *ngFor="let layPrice of matchOddsPrice.price.lay">
+                                                    <div class="lay-odd exch-odd-button" *ngIf="layPrice.price > 0" (click)="acc.expand('toggle-1'); setBetPrice(matchOdds.exEventId, matchOdds.eventName, matchOdds.marketId, matchOdds.marketName, matchOddsPrice.runnerName, matchOddsPrice.selectionId, 1, layPrice.price, 0, 1);">
                                                         <div class="exch-odd-button-content">
                                                             <div class="price">{{layPrice.price}}</div>
                                                             <div class="size">{{layPrice.size | thousandSuffixes : 2 }}
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                    <div class="lay-odd disabled exch-odd-button" *ngIf="layPrice.price == 0">
+                                                        <img class="lock-icon" slot="icon-only" src="../assets/img/Lock.32c76907.svg" alt="lock">
                                                     </div>
                                                 </div>
                                             </div>

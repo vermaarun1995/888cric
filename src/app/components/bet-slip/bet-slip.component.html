@@ -23,8 +23,8 @@
                                     </svg>
                                 </span>
                             </button>
-                            <input class="row-input" [(ngModel)]="oddsRequest" (change)="setBidPriceData(amountStake)" readonly type="number" 
-                                style="height: 30px; border: 0px; padding: 2px;">
+                            <input class="row-input" [(ngModel)]="oddsRequest" (change)="setBidPriceData(amountStake)" (focus)="oddsRequestFocus(true)" (blur)="oddsRequestFocus(false)" readonly type="number" 
+                                style="height: 30px; border: 0px; padding: 2px;" #oddRequestEle>
                             <button class="MuiButton-root MuiButtonBase-root odds-btns mr-1 css-1ujsas3" type="button" (click)="changeBetPrice('plus')">
                                 <span class="MuiButton-startIcon MuiButton-iconSizeMedium css-6xugel">
                                     <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-vubbuv" focusable="false"
@@ -37,7 +37,7 @@
                     </div>
                     <div class="input-row-ctn">
                         <div class="row-header">{{setBetData?.betType == 0 ? 'Stake' : 'Profit'}}</div>
-                        <input class="row-input" type="number" [(ngModel)]="amountStake" (change)="setBidPriceData(amountStake)" inputmode="numeric" style="height: 30px; border: 0px; padding: 2px;">
+                        <input class="row-input" type="number" [(ngModel)]="amountStake" (change)="setBidPriceData(amountStake)" inputmode="numeric" (focus)="stackAmountFocus(true)" (blur)="stackAmountFocus(false)" style="height: 30px; border: 0px; padding: 2px;" #stackAmountEle>
                     </div>
                 </div>
                 <div class="clear-row">

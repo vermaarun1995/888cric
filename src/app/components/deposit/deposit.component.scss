@@ -940,3 +940,174 @@ input#chck2 {
 label {
     width: 33%
 }
+
+body{
+    font-family: sans-serif;
+  }
+  
+  *{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .diposit-form-sec{
+    padding: 100px 15px;
+  }
+  
+    .diposit-inner{
+      background-color: #ffc726;
+      padding: 10px 20px;
+      border-radius: 5px 5px 0px 0px;
+    }
+  
+    .diposit-inner h1,p,span{
+      margin: 0px;
+      color: #fff;
+    }
+  
+    .diposit-inner p{
+      margin-top: 5px;
+    }
+  
+    .diposit-inner span{
+      font-size: 25px;
+      margin-top: 12px;
+      display: block;
+    }
+  
+    .payment-img img{
+      width: 120px;
+    }
+  
+    .diposit-sec{
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgb(0 0 0 / 25%);
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      border-radius: 5px;
+    }
+  
+    .using-sec{
+      padding: 20px 12px;
+     
+    }
+  
+    .using-sec p{
+      color: #858585;
+      padding-left: 10px;
+    }
+  
+    .upi-app-sec{
+      margin-top: 13px;
+      border: 1px solid #e6e7e8;
+      padding: 10px;
+    }
+  
+    .upi-app-sec h2{
+      margin:0px ;
+    }
+  
+    
+    .upi-app-sec h2 span{
+      margin-right: 10px;
+    }
+  
+    .upi-app-sec p{
+      color: #3964a8;
+      padding: 10px 0px 0px 37px;
+      font-size: 16px;
+    }
+  
+    .upi-app-sec h2 span img{
+      width: 24px;
+      height: 24px;
+    }
+    .payment-img{
+      padding: 10px 0px 0px 36px;
+    }
+  
+    .upi-app-sec .form-p {
+     width: 100%;
+     max-width: 278px;
+     margin-left: 35px;
+     position: relative;
+     margin-top: 13px;
+    }
+  
+    .upi-app-sec input{
+      padding: 12px;
+      width: 100%;
+      border-radius: 5px;
+      outline: none;
+      border: 1px solid #e6e7e8;
+      font-weight: 800;
+    }
+  
+    .upi-app-sec input::placeholder{
+      color: #3964a8;
+    }
+  
+    .upi-app-sec a{
+      position: absolute;
+      top: 7px;
+      right: 11px;
+      background-color: #5888d6;
+      padding: 3px 10px;
+      border-radius: 50px;
+      text-decoration: none;
+      color: #fff;
+      box-shadow: 5px 5px 0px #3964a8;
+    }
+  
+    .upi-app-sec a .fa-clone{
+      padding-right: 7px;
+    }
+  
+    .submit-sec{
+      padding-top: 30px;
+    }
+  
+   .submit-sec input{
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #858585;
+   }
+  
+   .submit-sec input.submit{
+    background-color: #3964a8;
+    border: 1px solid #3964a8;
+    color: #fff;
+    margin-top: 25px;
+    font-size: 25px;
+   }
+  
+   @media screen and (max-width:400px) {
+  
+    .upi-app-sec p {
+      
+      font-size: 13px;
+  }
+  
+    .upi-app-sec {
+     margin-left: 0px;
+     
+  }
+  
+  .upi-app-sec input {
+    font-size: 11px;
+  }
+    .upi-app-sec a {
+  
+      font-size: 14px;
+  }
+  
+  .submit-sec input.submit{
+    
+    font-size: 18px;
+   }
+   }
