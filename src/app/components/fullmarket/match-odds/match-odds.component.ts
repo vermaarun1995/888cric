@@ -45,6 +45,7 @@ export class MatchOddsComponent implements OnInit {
   oddValue : any = 0;
   selectionId : any = 0;
   betType : any = 0;
+  openMobView : boolean = false;
 
   constructor(
     private service: HttpService,
@@ -66,6 +67,7 @@ export class MatchOddsComponent implements OnInit {
     if($event === true){
       this.getNgbAccordion?.toggle("toggle-1");
     }
+    this.openMobView = false;
   }
 
   setBetData?: betData;
@@ -85,7 +87,8 @@ export class MatchOddsComponent implements OnInit {
       amountStake: amountStake,
       betType: betType,
       isSettlement: 2
-    }   
+    }
+    this.openMobView = true;
   }
 
   getBackLayAmount() {
