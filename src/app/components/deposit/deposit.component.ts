@@ -13,7 +13,7 @@ import { SessionService } from 'src/app/services/session.service';
 export class DepositComponent implements OnInit {
 
   depositAmount : number = 0;
-
+  referenceNum: string ='';
 
   setAmountData(amount:number){
     this.depositAmount = amount;
@@ -50,9 +50,9 @@ export class DepositComponent implements OnInit {
 debugger;
     let depositData = {
       "id": 0,
-      "UserId": parseInt(this.depositForm.value.userId),
-      "Amount":this.depositForm.value.amount,
-      "ReferenceNumber":this.depositForm.value.referenceNumber,
+      "UserId": this.userData?.id as Number,
+      "Amount":this.depositAmount,
+      "ReferenceNumber":this.referenceNum,
       "UpiId":this.upiData?.upiId
     };
 

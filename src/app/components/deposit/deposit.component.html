@@ -51,13 +51,13 @@
         </div> -->
     </div>
 </div>
-<form [formGroup]="depositForm" (ngSubmit)="saveDeposit()">
+<form (ngSubmit)="saveDeposit()">
     <div class="diposit-form-sec">
         <div class="diposit-sec">
             <div class="diposit-inner">
                 <h1>{{userData?.fullName}}</h1>
                 <p>{{userData?.phoneNumber}}</p>
-                <span>₹ 1000</span>
+                <span>{{depositAmount}}</span>
             </div>
             <div class="using-sec">
                 <p>PAY USING UPI APP</p>
@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="submit-sec">
-                    <input type="text">
+                    <input type="text" placeholder="Enter reference number" name="referenceNum" [(ngModel)]="referenceNum">
                     <input class="submit" type="submit" value="submit">
                 </div>
 
