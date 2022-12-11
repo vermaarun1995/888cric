@@ -32,7 +32,7 @@ import { AllsportHighlightComponent } from './components/allsport-highlight/alls
 import { ThousandSuffixesPipe } from './helpers/thousand-suffixes.pipe';
 import { ChangepasswordComponent } from './components/changepassword/changepassword.component';
 import { RegisterComponent } from './components/register/register.component';
-import { DepositpaymentComponent } from './components/depositpayment/depositpayment.component';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
   declarations: [
@@ -57,8 +57,7 @@ import { DepositpaymentComponent } from './components/depositpayment/depositpaym
     AllsportHighlightComponent,
     ThousandSuffixesPipe,
     ChangepasswordComponent,
-    RegisterComponent,
-    DepositpaymentComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +66,8 @@ import { DepositpaymentComponent } from './components/depositpayment/depositpaym
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    ClipboardModule
   ],
   providers: [AuthService, HttpService, SessionService, BetService ],
   bootstrap: [AppComponent]

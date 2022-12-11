@@ -12,48 +12,54 @@ import { SessionService } from 'src/app/services/session.service';
 })
 export class DepositComponent implements OnInit {
 
-  depositAmount : number = 0;
-  referenceNum: string ='';
+  depositAmount: number = 0;
+  referenceNum: string = '';
+  depaositPaymentPage: boolean = false;
 
-  setAmountData(amount:number){
+  setAmountData(amount: number) {
     this.depositAmount = amount;
   }
 
-  userData? : UserData;
-  upiData? : UpiData;
+  userData?: UserData;
+  upiData?: UpiData;
   depositForm: FormGroup;
   @Input() userId?: number;
-  constructor(private sessionService : SessionService, private service: HttpService, private fb: FormBuilder) {
+  constructor(private sessionService: SessionService, private service: HttpService, private fb: FormBuilder) {
     this.depositForm = this.fb.group({
       userId: [this.userId],
       amount: [''],
       referenceNumber: [''],
       upiId: ['']
     })
-   }
+  }
 
   ngOnInit(): void {
     this.userData = this.sessionService.getLoggedInUser();
     this.getActiveUpiId();
+    this.depaositPaymentPage = false;
   }
 
-  getActiveUpiId() : void {
+  openDepositPaymentPage(isPaymentPage:boolean){
+    this.depaositPaymentPage=isPaymentPage;
+  }
+
+  getActiveUpiId(): void {
     this.service.get(`Common/GetActiveUpi`)
-      .subscribe((response:ResponseModel) => {
-        if(response.isSuccess == true && response.data !== null){
+      .subscribe((response: ResponseModel) => {
+        if (response.isSuccess == true && response.data !== null) {
           this.upiData = <UpiData>response.data;
         }
       });
   }
 
-  saveDeposit(){
-debugger;
+  saveDeposit() {
+    debugger;
     let depositData = {
       "id": 0,
       "UserId": this.userData?.id as Number,
-      "Amount":this.depositAmount,
-      "ReferenceNumber":this.referenceNum,
-      "UpiId":this.upiData?.upiId
+      "Amount": this.depositAmount,
+      "ReferenceNumber": this.referenceNum,
+      "UpiId": this.upiData?.upiId
     };
 
     this.service.post('Setting/SaveDeposit', depositData)
@@ -74,10 +80,9 @@ debugger;
 
 }
 
-interface UpiData
-{
-    id: number;
-    upiId : string;
-    isActive : boolean;
+interface UpiData {
+  id: number;
+  upiId: string;
+  isActive: boolean;
 
 }
