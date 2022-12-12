@@ -191,15 +191,20 @@
                                         <td class="MuiTableCell-root MuiTableCell-body css-q34dxg">
                                             <div class="team">{{matchOddsPrice.runnerName}}</div>
                                             <div class="risk-ctn">
-                                                <div><div *ngIf="BidData[i][matchOddsPrice.selectionId] !=0" [ngClass]="{'loss' : BidData[i][matchOddsPrice.selectionId] < 0, 'profit' : BidData[i][matchOddsPrice.selectionId] > 0 }">{{BidData[i][matchOddsPrice.selectionId] > 0 ? '+' : ''}}{{BidData[i][matchOddsPrice.selectionId] | number : '1.2-2'}}</div></div>
-                                                <div class="text-right" *ngIf="stackValue > 0 &&  oddValue > 0 && matchOddsPrice.selectionId == selectionId"><span
-                                                        [ngClass]="{'loss' : betType == 1 && matchOddsPrice.selectionId == selectionId, 'profit' : betType == 0 && matchOddsPrice.selectionId == selectionId }"
-                                                        >
-                                                        <span *ngIf="betType == 0">+{{oddValue | number :
+                                                <div>
+                                                    <div *ngIf="BidData[i][matchOddsPrice.selectionId] !=0" [ngClass]="{'loss' : BidData[i][matchOddsPrice.selectionId] < 0, 'profit' : BidData[i][matchOddsPrice.selectionId] > 0 }">
+                                                        {{BidData[i][matchOddsPrice.selectionId] > 0 ? '+' : ''}}{{BidData[i][matchOddsPrice.selectionId] | number : '1.2-2'}}
+                                                    </div>
+                                                </div>
+                                                <div class="text-right" *ngIf="stackValue > 0 &&  oddValue > 0 && matchOddsPrice.selectionId == selectionId">
+                                                    <span
+                                                        [ngClass]="{'loss' : betType == 1 && matchOddsPrice.selectionId == selectionId, 'profit' : betType == 0 && matchOddsPrice.selectionId == selectionId }">
+                                                        <span *ngIf="betType == 0">{{oddValue | number :
                                                             '1.2-2'}}</span>
                                                         <span *ngIf="betType == 1">-{{oddValue | number :
                                                             '1.2-2'}}</span>
-                                                    </span></div>
+                                                    </span>
+                                                </div>
                                                 <div class="text-right" *ngIf="stackValue > 0 &&  oddValue > 0 && matchOddsPrice.selectionId != selectionId"><span
                                                         [ngClass]="{'loss' : betType != 1 && matchOddsPrice.selectionId != selectionId, 'profit' : betType != 0 && matchOddsPrice.selectionId != selectionId }"
                                                         >
