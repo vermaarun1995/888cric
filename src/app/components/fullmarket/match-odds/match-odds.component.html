@@ -7,23 +7,37 @@
                         <div class="MuiTabs-scroller MuiTabs-fixed css-1anid1y"
                             style="overflow: hidden; margin-bottom: 0px;">
                             <div aria-label="lab API tabs example" class="MuiTabs-flexContainer css-k008qs"
-                                role="tablist"><button
-                                    class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected tabs css-1q2h7u5"
-                                    tabindex="0" type="button" role="tab" aria-selected="true"
-                                    aria-controls="mui-p-465-P-1" id="mui-p-465-T-1">Market<span
-                                        class="MuiTouchRipple-root css-w0pj6f"></span></button><button
+                                role="tablist">
+                                <button class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary Mui-selected tabs css-1q2h7u5"
+                                 tabindex="0" type="button" role="tab" aria-selected="true"
+                                    aria-controls="mui-p-465-P-1" id="mui-p-465-T-1">
+                                    Market
+                                    <span
+                                        class="MuiTouchRipple-root css-w0pj6f">
+                                    </span>
+                                </button>
+                                <button
                                     class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary tabs css-1q2h7u5"
                                     tabindex="-1" type="button" role="tab" aria-selected="false"
-                                    aria-controls="mui-p-465-P-2" id="mui-p-465-T-2">Open Bets<span
-                                        class="MuiTouchRipple-root css-w0pj6f"></span></button><button
+                                    aria-controls="mui-p-465-P-2" id="mui-p-465-T-2">
+                                    Open Bets
+                                    <span
+                                        class="MuiTouchRipple-root css-w0pj6f"></span>
+                                    </button>
+                                    <!-- <button
                                     class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary tabs css-1q2h7u5"
                                     tabindex="-1" type="button" role="tab" aria-selected="false"
                                     aria-controls="mui-p-465-P-3" id="mui-p-465-T-3">Score<span
-                                        class="MuiTouchRipple-root css-w0pj6f"></span></button><button
+                                        class="MuiTouchRipple-root css-w0pj6f">
+                                    </span>
+                                </button>
+                                <button
                                     class="MuiButtonBase-root MuiTab-root MuiTab-textColorPrimary tabs css-1q2h7u5"
                                     tabindex="-1" type="button" role="tab" aria-selected="false"
                                     aria-controls="mui-p-465-P-4" id="mui-p-465-T-4">Live Stream<span
-                                        class="MuiTouchRipple-root css-w0pj6f"></span></button></div>
+                                        class="MuiTouchRipple-root css-w0pj6f"></span>
+                                    </button> -->
+                                </div>
                             <span class="MuiTabs-indicator css-ttwr4n" style="left: 0px; width: 0px;"></span>
                         </div>
                     </div>
@@ -75,20 +89,27 @@
                                                         class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium team-name-cell css-q34dxg">
                                                         <div class="team">{{matchOddsPrice.runnerName}}</div>
                                                         <div class="risk-ctn">
-                                                            <div><span
+                                                            <div *ngIf="BidData[i][matchOddsPrice.selectionId] !=0" [ngClass]="{'loss' : BidData[i][matchOddsPrice.selectionId] < 0, 'profit' : BidData[i][matchOddsPrice.selectionId] > 0 }">
+                                                                {{BidData[i][matchOddsPrice.selectionId] > 0 ? '+' : ''}}{{BidData[i][matchOddsPrice.selectionId] | number : '1.2-2'}}
+                                                            </div>
+                                                            <div>
+                                                                <span
                                                                     [ngClass]="{'loss' : betType == 1 && matchOddsPrice.selectionId == selectionId, 'profit' : betType == 0 && matchOddsPrice.selectionId == selectionId }"
                                                                     *ngIf="stackValue > 0 &&  oddValue > 0 && matchOddsPrice.selectionId == selectionId">
                                                                     <span *ngIf="betType == 0">+{{oddValue | number :
                                                                         '1.2-2'}}</span>
                                                                     <span *ngIf="betType == 1">-{{oddValue | number :
                                                                         '1.2-2'}}</span>
-                                                                </span></div>
-                                                            <div><span
+                                                                </span>
+                                                            </div>
+                                                            <div>
+                                                                <span
                                                                     [ngClass]="{'loss' : betType != 1 && matchOddsPrice.selectionId != selectionId, 'profit' : betType != 0 && matchOddsPrice.selectionId != selectionId }"
                                                                     *ngIf="stackValue > 0 &&  oddValue > 0 && matchOddsPrice.selectionId != selectionId">
                                                                     <span *ngIf="betType != 0">+{{stackValue}}</span>
                                                                     <span *ngIf="betType != 1">-{{stackValue}}</span>
-                                                                </span></div>
+                                                                </span>
+                                                            </div>
                                                         </div>
                                                     </td>
                                                     <td
