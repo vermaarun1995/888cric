@@ -126,10 +126,6 @@ export class MatchOddsComponent implements OnInit {
     this.selectionId = Number(event.selectionId);
     this.betType = Number(event.betType);
   }
-
-
-
-
 }
 
 

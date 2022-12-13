@@ -26,13 +26,13 @@
                                             <th class="MuiTableCell-root css-12pjbv5">Stake</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="MuiTableBody-root open-bets-table-body css-1xnox0e">
+                                    <tbody class="MuiTableBody-root open-bets-table-body css-1xnox0e" *ngFor="let tableColumn of betListData">
                                         <tr class="MuiTableRow-root lay-bet open-bets-table-row css-1gqug66">
                                             <td class="MuiTableCell-root css-1o6fzn1">
-                                                <div>MATCH_ODDS - Australia</div>
+                                                <div>MATCH_ODDS - {{tableColumn.event}}</div>
                                             </td>
-                                            <td class="MuiTableCell-root css-1thfh4x">1.76</td>
-                                            <td class="MuiTableCell-root css-1thfh4x">100</td>
+                                            <td class="MuiTableCell-root css-1thfh4x">{{tableColumn.oddsRequest}}</td>
+                                            <td class="MuiTableCell-root css-1thfh4x">{{tableColumn.amountStake}}</td>
                                         </tr>
                                     </tbody>
                                 </table>
